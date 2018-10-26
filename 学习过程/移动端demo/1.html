@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html{
+        font-size: 16px;
+    }
+    body{
+        background-color: #F5F5F5
+    }
+    .flexbox{
+        display:-webkit-flex;
+    }
+    #box{
+        max-width: 640px;
+        margin: 0 auto;
+        position: relative;
+    }
+    #box header{
+        height: 4.05rem;
+        background-color: #91d4da;
+    }
+    #box header h1{
+        text-align: center;
+        line-height: 4.05rem;
+        font-size: 16px;
+        color:white;
+    }
+    #box header .return{
+        position: absolute;
+        top:1.2rem;
+        left:0.8rem;
+        color:white;
+        font-size: 16px;
+    }
+    #box header .return img{
+        vertical-align: sub;
+    }
+    #box nav{
+        height: 4.05rem;
+    }
+    #box nav ul li{
+        -webkit-flex:1;
+        list-style-type: none;  
+        text-align: center;
+        line-height: 4.05rem;
+        position: relative;
+    }
+    #box nav ul .show:after{
+        content:'';
+        position: absolute;
+        left:0;
+        bottom: 0;
+        height: 0.3rem;
+        width: 100%;
+        background-color: #91d4da;
+    }
+    #box .label{
+        padding-top: 2rem;
+        height: 10rem;
+        width: 100%;
+        position: relative;
+        background-color: white;
+    }
+    #box .label ul{
+        list-style-type: none;
+        width: 100%;
+        
+    }
+    #box .label ul li{
+        -webkit-flex:1;   
+        height: 8rem;
+    }
+    #box .label ul li div{
+        width: 4rem;
+        height: 4rem;
+        border-radius: 100%;
+        background-image: url(./img/list.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 40%;
+        background-color: #91d4da;
+        margin:0 auto; 
+        margin-bottom: 1.2em;
+    }
+    #box .label ul li p{
+        text-align: center;
+    }
+    #box .label:after{
+        content: '';
+        background-color: #e6e6e6;
+        width: 90%;
+        height: 0.3em;
+        position: absolute;
+        left: 5%;
+        bottom: 0;
+    }
+    #box .fenlan{
+        height: 10rem;
+        padding-top: 2rem;
+        background-color: white;
+        
+    }
+    #box .fenlan ul{
+        list-style: none;
+    }
+    #box .fenlan ul li{
+        -webkit-flex: 1;
+    }
+    #box .fenlan ul li:nth-child(-n+2){
+        border-right: 0.3rem solid #e6e6e6;
+    }
+    #box .fenlan ul li div{
+        height: 5rem;
+        background-image: url(./img/bear1.png);
+        background-size: 30%;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 1rem;
+    }
+    #box .fenlan ul li:nth-child(2) div{
+        background-image: url(./img/bear2.png);
+    }
+    #box .fenlan ul li:nth-child(3) div{
+        background-image: url(./img/bear3.png);
+        background-size: 50%;
+    }
+    #box .fenlan ul li h3,p{
+        text-align: center;
+    }
+    #box .display{
+        padding: 1rem;
+        background-color: white;
+        margin-top: 1rem;
+    }
+    #box .display .article{
+        width: 100%;
+    }
+    #box .display .article .pic{
+        height: 10rem;
+        background-image: url(./img/2.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 110%;
+        -webkit-flex:1;
+        margin-right: 3rem;
+    }
+    #box .display .article .passage{
+        height: 10rem;
+        -webkit-flex:3;
+        width:70%;
+    }
+
+    #box .display .article .passage ul li{
+        width: 40%;
+        height: 3rem;
+        list-style: none;
+        float: left;
+        text-align: center;
+        background-color: #d3d3d3;
+        margin-right: 1rem;
+        line-height: 3rem;
+    }
+    #box .display .article .passage ul li:nth-child(-n+2){
+        margin-top: 1rem;
+        margin-bottom: 2rem;;
+    }
+    #box .display .header{
+        width:100%;
+        line-height: 5rem;
+        border-bottom: 0.2rem solid #e6e6e6;
+        margin-bottom: 1rem;
+    }
+    #box .footer{
+        margin-top: 1.5rem;
+    }
+    #box .footer .news{
+        background-color: white;
+        padding: 1rem;
+        position: relative;
+    }
+    #box .footer .news:after{
+        content: '';
+        width:100%;
+        height: 0.3rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #d3d3d3;
+    }
+    #box .footer .news .short img{
+        width: 10rem;
+        height: 9rem;
+        display: block;
+        flex: 1;
+        margin-right: 1rem;
+        
+    }
+    #box .footer .news .short .contain{
+        flex:2.5;
+        position: relative;
+    }
+    #box .footer .news .short .contain{
+        display: -webkit-flex;
+        flex-direction: column;
+    }
+    #box .footer .news .short .contain p{
+        text-align: left;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        color: lightslategray;
+    }
+    #box .footer .news .long{
+        overflow: hidden;
+    }
+    #box .footer .news .long img{
+        flex: 1;
+        margin-right: 0.3rem;
+        margin-top: 0.3rem;
+        height:8rem;
+        width:33%;
+    }
+    #box .footer .news p{
+        color: lightslategray;
+        text-align: left;
+        line-height:2rem;
+
+    }
+</style>
+<body>  
+    <div id='box'>
+        <header>
+            <span class='return'><img src="./img/left.svg" alt="" height="20px">返回</span>
+            <h1>这是标题</h1>
+        </header>
+        <nav>
+            <ul class='flexbox'>
+                <li class="show">导航</li>
+                <li>导航</li>
+                <li>导航</li>
+                <li>导航</li>
+                <li>导航</li>
+            </ul>
+        </nav>
+        <div class='ban'><img src="./img/bck.png" alt="bear" width="100%"></div>
+        <div class="label">
+            <ul class='flexbox'>
+                <li><div></div><p>标签</p></li>
+                <li><div></div><p>标签</p></li>
+                <li><div></div><p>标签</p></li>
+                <li><div></div><p>标签</p></li>
+                <li><div></div><p>标签</p></li>
+            </ul>
+        </div> 
+        <div class='fenlan'>
+            <ul class='flexbox'>
+                <li><div></div><h3>分栏一</h3><p>分栏小标题</p></li>
+                <li><div></div><h3>分栏二</h3><p>分栏小标题</p></li>
+                <li><div></div><h3>分栏三</h3><p>分栏小标题</p></li>
+            </ul>
+        </div>   
+        <div class="display">
+            <div class="header">模块一</div>
+            <div class="article flexbox">
+                <div class='pic'></div>
+                <div class="passage">
+                    <ul>
+                        <li>这是文案</li>
+                        <li>这是文案</li>
+                        <li>这是文案</li>
+                        <li>这是文案</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="article flexbox">
+                    <div class='pic'></div>
+                    <div class="passage">
+                        <ul>
+                            <li>这是文案</li>
+                            <li>这是文案</li>
+                            <li>这是文案</li>
+                            <li>这是文案</li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+        <div class="display">
+                <div class="header">模块二</div>
+                <div class="article flexbox">
+                    <div class='pic'></div>
+                    <div class="passage">
+                        <ul>
+                            <li>这是文案</li>
+                            <li>这是文案</li>
+                            <li>这是文案</li>
+                            <li>这是文案</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="article flexbox">
+                        <div class='pic'></div>
+                        <div class="passage">
+                            <ul>
+                                <li>这是文案</li>
+                                <li>这是文案</li>
+                                <li>这是文案</li>
+                                <li>这是文案</li>
+                            </ul>
+                        </div>
+                    </div>
+            </div> 
+        <div class='footer'>      
+            <div class='news'>
+                <div class='short flexbox'>
+                    <img src="./img/1.png" alt="">
+                    <div class='contain'><h2>这是文章标题</h2><p>文章来源 6分钟前</p></div>
+                </div>
+            </div>    
+            <div class='news'>
+                <div class='short flexbox'>
+                    <img src="./img/1.png" alt="">
+                    <div class='contain'><h2>这是文章标题</h2><p>文章来源 6分钟前</p></div>
+                </div>        
+            </div>
+            <div class='news'>
+                <h2>这是文章标题</h2>
+                <div class='long flexbox'>
+                    <img src="./img/1.png" alt="">
+                    <img src="./img/1.png" alt="">
+                    <img src="./img/1.png" alt="">
+                </div>
+                <p>文章来源 7分钟前</p>
+            </div>
+        </div>    
+    </div>
+</body>
+</html>

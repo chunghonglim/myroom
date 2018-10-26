@@ -1,0 +1,2008 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ <style type="text/css">
+	/*初始CSS*/
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background:rgb(244,244,244);
+		}
+		a{
+			text-decoration:none;
+			color:black;
+			font-family:'Microsoft YaHei';			
+			}
+		li{
+			list-style:none;
+		}
+	/*顶部导航CSS*/
+		#nav1{
+			height:82px;
+			width:1349px;
+			background:rgb(255,255,255);
+			}
+		#nav1 #logo{
+			float:left;
+			}
+		#nav1 #logo img{
+			margin-top:28px;
+			margin-left:56px;
+			}
+		#nav1 #nav>ul{
+			height:100%;
+			float:left;
+			margin-left:103px;
+			}
+		#nav1 #nav>ul>li{
+			display:block;
+			height:82px;
+			line-height:82px;
+			float:left;
+			padding:0 16px;
+			font-size:15px;
+			cursor:pointer;
+			}
+		#nav1 #nav>ul>li:hover a{
+			color:rgb(110,181,227);
+		}
+		#nav1 #search{
+			height:100%;
+			float:left;
+			margin-left:27px;
+			}
+		#nav1 #search .bor-der{
+			width:160px;
+			height:21px;
+			display:block;
+			margin-top:26px;
+			border-radius:20px;
+			border:1px solid ;
+			padding:5px 12px;		
+			}
+		#nav1 #search input{
+			width:137px;
+			height:20px;
+			border:none;
+			display:block;
+			float:left;
+			outline:none;   
+			}
+		#nav1 #search input::-ms-clear{		/*去掉文本框的X*/
+			display:none;
+		}
+		#nav1 #search img{
+			display:block;	
+			float:left;
+		}
+		#nav1 #search-after{
+			float:left;
+			height:100%;
+			margin-left:20px;
+			position:relative;
+		}
+		#nav1 #search-after>ul>li{
+			float:left;
+		}
+		#nav1 #search-after ul li>a{
+			display:block;
+			height:100%;
+			width:50px;
+			float:left;
+			position:relateve;
+		}
+		#nav1 #search-after a img{
+			display:block;
+			margin:25px 10px;
+		}
+		#nav1 #nav .box{
+			position:absolute;
+			left:0;
+			top:82px;
+			width:100%;
+			height:0px;
+			overflow:hidden;
+			transition:0s;
+			background-color:rgb(255,255,255);
+			z-index:8;
+		}
+		#nav1 .box .nav-hide{
+			height:119px;
+			padding:10px 10px;		
+		}
+		#nav1 .box .nav-hide ul li{
+			line-height:16px;
+			text-align:center;
+			display:inline-block;
+			margin:0 35px;
+			font-size:12px;
+			color:rgb(138,138,138);
+			opacity:0.7;
+		}
+		#nav1 #nav>ul>li:hover .box{		/*移动到相对于li会出现下拉菜单显示商品，通过控制高度变化实现*/
+			height:139px;
+			transition:.5s;
+		}
+		#nav1 .box .nav-hide ul{
+			width:0px;
+			height:100%;
+			transition:0s;
+			overflow:hidden;
+			background-color:rgb(255,255,255);
+		}
+		#nav1 #nav>ul>li:hover .box .nav-hide ul{		/*移动到相对于li会使商品从左往右载入，通过控制宽度变化实现*/
+			width:1080px;
+			height:100%;
+			margin:0 auto;
+			transition:1.5s;
+		}
+		#nav1 .box .nav-hide ul li:hover{
+			opacity:1;
+		}
+		#nav1 #search-after ul li .enter{
+			height:	120px;
+			width:99px;
+			position:absolute;
+			top:69px;
+			left:-22px;
+			border:1px solid rgb(239,239,239);
+			border-radius:5px;
+			padding:5px 0;
+			background-color:rgb(255,255,255);
+			display:none;
+			z-index:4;		
+		}
+		#nav1 #search-after ul li .enter li{
+			font-size:10px;
+			width:99px;
+			height:30px;
+			text-align:center;
+			font-size:12px;
+		}
+		#nav1 #search-after ul li .enter li a{
+			width:100%;
+			line-height:30px;
+			
+		}
+		#nav1 #search-after ul li .enter span{		/*倒三角*/
+			display:block;
+			position:absolute;
+			top:-15px;
+			left:42px;
+			width:0;
+			height:0;
+			border-width:7px;
+			border-style:solid;
+			border-color:transparent transparent rgb(239,239,239) transparent;
+		}
+		#nav1 #search-after ul li:hover .enter{
+			display:block;
+		}
+		#nav1 #search-after ul li .enter ul li:hover a{
+			background-color:rgb(238,238,238);
+			color:rgb(0,195,245);
+		}
+		#nav1 #search-after ul li .shop{
+			width:318px;
+			height:122px;
+			position:absolute;
+			left:-220px;
+			top:78px;
+			border:1px solid rgb(239,239,239);
+			border-radius:5px;
+			background-color:rgb(255,255,255);
+			display:none;
+			z-index:4;
+		}
+			#nav1 #search-after ul li .shop span{		/*倒三角*/
+			display:block;
+			position:absolute;
+			top:-15px;
+			left:290px;
+			width:0;
+			height:0;
+			border-width:7px;
+			border-style:solid;
+			border-color:transparent transparent rgb(239,239,239) transparent;
+		}
+		#nav1 #search-after ul li .shop .panda{
+			width:100px;
+			height:123px;;
+			float:left;
+			position:relative;
+		}
+
+		#nav1 #search-after ul li .shop .panda img{
+			position:absolute;
+			top:35px;
+			left:40px;
+		}
+		#nav1 #search-after ul li .shop ul{
+			margin-top:20px;
+			margin-top: 39px;
+			font-size: 13px;
+			color:rgb(153,153,153);
+		}
+		#nav1 #search-after ul li:hover .shop{
+			display:block;
+		}
+	/*轮播图CSS*/
+		#banner{
+			height:482px;
+			width:1349px;
+			position:relative;
+			overflow:hidden;
+			}
+		#banner .banner-list{
+			height:100%;
+			}								/*继承父级高度*/
+		#banner .banner-img{
+
+			display:block;
+			position:absolute;
+			left:-299px;
+			z-index:0;
+			opacity:0;
+			transition:1s;
+			}
+		#banner .banner-dot{	
+			width:100%;						/*继承父级高度*/
+			position:absolute;
+			bottom:10px;
+			text-align:center;		
+			}
+		#banner .banner-dot span{
+			width:10px;
+			height:10px;
+			display:inline-block;	
+			border-radius:10px;
+			border:1px solid rgb(185,186,186);
+			cursor:pointer;
+			margin:2px;
+			z-index:3;
+			}
+		#banner .banner-click-left{
+			position:absolute;
+			top:211px;
+			left:300px;
+			background-color:;
+			width:32px;
+			height:61px;
+			line-height:61px;
+			text-align:center;
+			font-size:25px;
+			font-weight:900;
+			color:rgb(237,235,235);
+			cursor:pointer;
+		}
+		#banner .banner-click-left:hover{
+			background-color:black;
+			opacity:0.4;
+		}
+		#banner .banner-click-right{
+			position:absolute;
+			top:211px;
+			right:0;
+			background-color:;
+			width:32px;
+			height:61px;
+			line-height:61px;
+			text-align:center;
+			font-size:25px;
+			font-weight:900;
+			color:rgb(237,235,235);
+			cursor:pointer;
+		}
+		#banner .banner-click-right:hover{
+			background-color:black;
+			opacity:0.4;
+		}
+		#banner #left-nav{
+			height:100%;
+			width:245px;
+			position:absolute;
+			top:0;
+			left:56px;
+			z-index:4;
+			background-color:rgba(255,255,255,0.8);
+		}
+		#banner #left-nav ul{
+			margin-top:9px;
+		}
+		#banner #left-nav ul li{
+			line-height:58px;
+			padding-left:33px;
+			font-size:14px;
+			cursor:pointer;
+		}
+		#banner #left-nav ul li:hover{
+			background-color:rgb(255,255,255);
+		}
+		#banner #left-nav ul li .nav-list{
+			position:absolute;
+			left:245px;
+			top:0;
+			width:374px;
+			height:482px;
+			display:none;
+		}
+		#banner #left-nav ul li .display-area{
+			width:324px;
+			height:464px;
+			background-color:white;
+			float:left;
+			padding:5px 25px;
+		}
+		#banner #left-nav ul li .display-area .title{
+			border-bottom:1px solid rgb(245,245,245);
+			height:40px;
+			width:324px;
+			padding-bottom:10px;
+			cursor:pointer;
+		}
+		#banner #left-nav ul li .display-area div{
+			width:150px;
+			height:58px;
+			background:rgb(255,255,255);
+			float:left;
+			margin-right:10px;
+			font-size:12px;
+			overflow: hidden;						/*这三行是为了让超出部分文字隐藏*/
+			text-overflow:ellipsis;		
+			white-space:nowrap;			
+		}
+		#banner #left-nav ul li .display-area div span,img{
+			display:inline-block;
+			vertical-align:middle;
+			margin-right:3px;
+		}
+		#banner #left-nav ul li .display-area .title .right-head{
+			display:block;
+			float:right;
+		}
+		#banner #left-nav ul li .display-area .title:hover span{
+			color:rgb(111,221,249);
+		}
+		#banner #left-nav ul li .display-area .title:hover a{
+			color:rgb(111,221,249);
+		}
+		#banner #left-nav ul li .display-area div:hover a{
+			color:rgb(111,221,249);
+		}
+		#banner #left-nav ul li:hover .nav-list{
+			display:block;
+		}
+	/*轮播图下面的M码通道以及图片*/
+		#banner-bottom{
+			width:1262px;
+			height:156px;
+			margin:10px 54.5px;
+			margin-bottom:0;
+			overflow:hidden;
+		}
+		#banner-bottom li{
+			width:242px;
+			height:158px;
+			float:left;
+			background:red;
+			margin-right:10px;
+		}
+		#banner-bottom li img{
+			width:242px;
+			height:158px;
+		}
+		#banner-bottom li a img{
+			float:left;
+			width:121px;
+			height:79px;
+			margin-right:0;
+			opacity:.988;
+		}
+		#banner-bottom li a img:hover{
+			opacity:1;
+		}
+	/*热销商品动态展示区CSS*/
+		#hotobject{
+			width:1240px;
+			height:423px;
+			overflow:hidden;
+			margin:20px 54.5px;
+			margin-bottom:0;
+		}	
+		#hotobject h2{
+			width:1240px;
+			height:45px;
+			line-height:36px;
+			margin:0 auto;
+			font-weight:400;
+			background:rgb(244,244,244);
+		}
+		#hotobject h2 a{
+			display:inline-block;
+			width:23px;
+			height:23px;
+			border:1px solid black;
+			text-align:center;
+			line-height:23px;
+			float:right;
+			margin-top:5px;
+			margin-left:5px;
+			cursor:pointer;
+			font-size:14px;
+			opacity:.4;
+		}
+		#hotobject .hot{
+			width:2480px;
+			height:360px;
+			margin:0 auto;
+			transition:1s;
+			background:rgb(244,244,244);
+		}
+		#hotobject .hot .hotpicture{
+			width:240px;
+			height:340px;
+			float:left;
+			margin-right:10px;
+			background:rgb(255,255,255);
+		}
+		#hotobject .hot .hotpicture span{
+			display:block;
+			margin:10px auto;
+			width:100%;
+			text-align:center;
+			color:black;
+			font-weight:400;
+		}
+		#hotobject .hot .hotpicture img{
+			display:block;
+			margin:20px auto;
+		}
+		#hotobject .hot .hotpicture:hover{
+			box-shadow:6px 14px 12px rgba(0,0,0,0.1);
+			transform:translatey(-2px);
+		}
+	/*热区广告1区CSS*/
+		.hotarea{
+			width:100%;
+			height:160px;
+		}
+		.hotarea a img{
+			display:block;
+			margin:20px 54.5px;
+		}
+	/*商品栏CSS*/
+		#shoparea{
+			width:1240px;
+			height:780px;
+			margin:20px 54.5px;
+			margin-bottom:0;
+		}	
+		#shoparea h2{
+			width:1240px;
+			height:45px;
+			line-height:36px;
+			margin:0 auto;
+			font-weight:400;
+			background:rgb(244,244,244);
+		}
+		#shoparea h2 a{
+			display:inline-block;
+			text-align:center;
+			line-height:23px;
+			float:right;
+			margin-left:5px;
+			cursor:pointer;
+			font-size:14px;
+			opacity:.4;
+		}
+		#shoparea .hot{
+			width:2480px;
+			height:360px;
+			margin:0 auto;
+			transition:1s;
+			background:rgb(244,244,244);
+		}
+		#shoparea .hot .hotpicture{
+			width:240px;
+			height:340px;
+			float:left;
+			margin:5px 10px 5px 0;
+			background:rgb(255,255,255);
+			position:relative;
+		}
+		#shoparea .hot .hotpicture span{
+			display:block;
+			margin:7px auto;
+			width:100%;
+			text-align:center;
+			color:black;
+			font-weight:400;
+		}
+		#shoparea .hot .hotpicture img{
+			display:block;
+			margin:20px auto;
+		}
+		#shoparea .hot .hotpicture:hover{
+			box-shadow:6px 14px 12px rgba(0,0,0,0.1);
+			transform:translatey(-2px);
+		}
+		#shoparea .hot .first:hover{
+			box-shadow:none;
+			transform:none;
+		}
+		#shoparea h2 a:hover{
+			opacity:1;
+		}
+ 	/*商品栏-3栏式CSS*/
+		#three-shoparea{
+			width:1240px;
+			height:780px;
+			margin:20px 54.5px;
+			margin-bottom:0;
+		}	
+		#three-shoparea h2{
+			width:1240px;
+			height:45px;
+			line-height:36px;
+			margin:0 auto;
+			font-weight:400;
+			background:rgb(244,244,244);
+		}
+		#three-shoparea h2 a{
+			display:inline-block;
+			text-align:center;
+			line-height:23px;
+			float:right;
+			margin-left:5px;
+			cursor:pointer;
+			font-size:14px;
+			opacity:.4;
+		}
+		#three-shoparea .hot{
+			height:720px;
+			width:1240px;
+			margin:0 auto;
+			transition:1s;
+			background:rgb(244,244,244);
+		}
+		#three-shoparea .hot .hotpicture{
+			width:240px;
+			height:340px;
+			float:left;
+			margin:5px 10px 5px 0;
+			background:rgb(255,255,255);;
+		}
+		#three-shoparea .hot .hotpicture span{
+			display:block;
+			margin:7px auto;
+			width:100%;
+			text-align:center;
+			color:black;
+			font-weight:400;
+		}
+		#three-shoparea .hot .hotpicture img{
+			display:block;
+			margin:20px auto;
+		}
+		#three-shoparea .hot .hotpicture:hover{
+			box-shadow:6px 14px 12px rgba(0,0,0,0.1);
+			transform:translatey(-2px);
+		}
+		#three-shoparea .hot .first:hover{
+			box-shadow:none;
+			transform:none;
+		}
+		#three-shoparea h2 .bortom{
+			border-bottom:3px solid rgb(102,102,102);
+		}
+	/*底部CSS*/
+		#footer{
+			width:1349px;
+			height:247px;
+			background:white;			
+		}
+		#footer .promise{
+			width:1240px;
+			height:143px;
+			border-bottom:1px solid #efefef;
+			margin:0 auto;
+		}
+		#footer .promise .box{
+			width:150px;
+			height:69px;
+			display:inline-block;
+			margin:42px 2px;
+		}
+		#footer .promise .box a img{
+			width:50px;
+			height:39px;
+		}
+		#footer .promise .box span{
+			width:100%;
+			color:#999;
+			display:block;
+			text-align:center;
+			font-size:12px;
+			line-height:28px;
+		}
+		#footer .promise .box a{
+			width:100%;
+			color:#999;
+			display:block;
+			text-align:center;
+		}
+		#footer .self{
+			height:97px;
+			width:189px;
+			float:right;
+			padding-top:46px;
+		}
+		#footer .self{
+			text-align:right;
+		}
+		#footer .self a{
+			opacity:.8;
+		}
+
+		#footer .self a:hover{
+			opacity:1;
+		}
+		#footer .detail{
+			width:1240px;
+			height:86px;
+			margin:0 auto;
+		}
+		#footer .detail ul{
+			list-style:none;
+			margin-top:20px;
+		}
+		#footer .detail ul li{
+			display:inline-block;
+			font-size:12px;
+			color:#999;
+			padding-right:15px;
+			border-right:1px solid #999;
+			margin-right:5px;
+		}
+		#footer .detail ul li a{
+			color:#999;
+		}
+		#footer .detail ul span{
+			display:inline-block;
+			font-size:12px;
+			color:#999;
+			cursor:pointer;
+			position:relative;
+		}
+		#footer .detail ul span .langue{
+			width:108px;
+			height:156px;
+			position:absolute;
+			top:-159px;
+			left:-11px;
+			border:1px solid #999;
+			background:white;
+			display:none;
+		}
+		#footer .detail ul span .langue ul {
+			margin:0;
+		}
+		#footer .detail ul span .langue ul li{
+			line-height:37px;
+			border:none;
+			width:100%;
+			text-align:left;
+			margin-left:10px;
+		}
+		#footer .detail ul span:hover .langue{
+			display:block;
+		}
+		#footer .detail ul span .langue ul li:hover{
+			opacity:.6;
+		}
+		#footer .lastline{
+			width:986px;
+			height:23px;
+		}
+		#footer .lastline ul li{
+			display:inline-block;
+			font-size:12px;
+			color:#999;
+			border-right:none;
+			padding-right:0;
+			margin-right:0;
+		}
+		#footer .lastline ul li a{
+			color:#999;
+		}
+		#footer .lastline ul span{
+			display:inline-block;
+			width:20px;
+			height:20px;
+			vertical-align:middle;
+		}
+		#footer .lastline ul .safe{
+			background-image:url(./img/safean.png);
+			background-size:80%;
+			background-repeat:no-repeat;
+			margin-left:6px;
+			
+		}
+		#footer .lastline ul .police{
+			background-image:url(./img/policean.png);
+			background-size:80%;
+			background-repeat:no-repeat;
+		}
+		#footer .lastline ul .xin{
+			background-image:url(./img/xinan.png);
+			background-size:100%;
+			background-repeat:no-repeat;
+		}
+		#footer .lastline ul .qzone{
+			background-image:url(./img/qzone.png);
+			background-size:110%;
+			background-repeat:no-repeat;			
+			float:right;
+			margin-right:5px;
+		}
+		#footer .lastline ul .wx{
+			background-image:url(./img/wxan.png);
+			background-size:110%;
+			background-repeat:no-repeat;
+			float:right;
+			margin-right:30px;
+			position:relative;
+		}
+		#footer .lastline ul .wb{
+			background-image:url(./img/wban.png);
+			background-size:110%;
+			background-repeat:no-repeat;
+			float:right;
+			margin-right:30px;
+		}
+		#footer .lastline ul .safe:hover{
+			background-image:url(./img/safeliang.png);	
+		}
+
+		#footer .lastline ul .police:hover{
+			background-image:url(./img/policeliang.png);
+		}
+		#footer .lastline ul .xin:hover{
+			background-image:url(./img/xinliang.png);
+		}
+		#footer .lastline ul .qzone:hover{
+			background-image:url(./img/qzone1.png);
+		}
+		#footer .lastline ul .wx:hover{
+			background-image:url(./img/wxliang.png);
+		}
+		#footer .lastline ul .wb:hover{
+			background-image:url(./img/wbliang.png);
+		}
+		#footer .lastline ul .wx .erweima{
+			width:180px;
+			height:180px;
+			position:absolute;
+			top:-192px;
+			left:-96px;
+			overflow:hidden;
+			z-index:-1;
+		}
+		#footer .lastline ul .wx .erweima img{
+			transform:translatey(180px);
+		}
+		#footer .lastline ul .wx:hover .erweima{
+			z-index:1;
+		}
+
+		#footer .lastline ul .wx:hover .erweima img{
+			transform:translatey(0px);
+			transition:.5s;
+		}
+	/*侧向导航栏CSS*/
+		#right-nav{
+		position:fixed;
+		right:0;
+		top:30%;
+		width:123px;
+		height:152px;
+		background:red;
+		transform:translatex(123px);
+		transition:1s;
+		}
+		#right-nav div{
+			width:126px;
+			height:50px;
+			transition:1s;
+		}
+		#right-nav div span{
+			width:73px;
+			height:50px;
+			display:inline-block;
+			color:white;
+			font-size:12px;
+			float:left;
+			line-height:50px;
+			background:rgb(216,216,216);
+		}
+		#right-nav div img{
+			display:inline-block;
+			float:left;
+			margin-right:0;
+		}
+		#right-nav .shop:hover{
+			transform:translatex(-73px);
+			transition:1s;
+		}
+		#right-nav .backtop:hover{
+			transform:translatex(-73px);
+			transition:1s;
+		}
+		#right-nav .app .apperweima{
+			width:146px;
+			height:180px;
+			position:absolute;
+			left:-162px;
+			top:-146px;
+			padding:8px;
+			background:rgb(216,216,216);
+			display:none;
+		}
+		#right-nav .app:hover .apperweima{
+			display:block;
+		}
+ </style>
+ </head>
+ <body>
+	<!--头部导航栏-->
+		<div id='nav1'>
+			<div id='logo'><a href='javascript:void(0);'><img src='./img/logo.png' alt='' width='129px' height='26px'></a></div>
+			<div id='nav'>
+				<ul>
+					<li><a href='javascript:void(0)'>商城</a></li>
+					<li><a href='javascript:void(0)'>手机</a>
+						<div class='box'>	
+							<div class='nav-hide'>
+								<ul>
+									<li><a href='javascript:void(0)'><img src='./img/h1.png' alt='' width='80px' height='80px'></a><p>魅族 16th</p><p>￥2698起</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/h2.png' alt='' width='80px' height='80px'></a><p>16th Plus</p><p>￥3198起</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/h3.png' alt='' width='80px' height='80px'></a><p>魅族 15</p><p>￥1998起</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/h4.png' alt='' width='80px' height='80px'></a><p>魅族 M15</p><p>￥1398起</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/h5.png' alt='' width='80px' height='80px'></a><p>魅族 15Plus</p><p>￥2498起</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/h6.png' alt='' width='80px' height='80px'></a><p>魅蓝 6T</p><p>￥799起</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/h7.png' alt='' width='80px' height='80px'></a><p>魅蓝 E3</p><p>￥1799起</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/h8.png' alt='' width='80px' height='80px'></a><p>魅蓝 S6</p><p>￥999起</p></li>
+								</ul>
+							</div>		
+						<div>
+					</li>
+					<li><a href='javascript:void(0);'>声学</a>
+						<div class='box'>	
+							<div class='nav-hide'>
+								<ul>
+									<li><a href='javascript:void(0)'><img src='./img/j1.png' alt='' width='80px' height='80px'></a><p>魅族 HALO</p><p>￥999</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/j2.png' alt='' width='80px' height='80px'></a><p>魅族 POP</p><p>￥499</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/j3.png' alt='' width='80px' height='80px'></a><p>魅族 EP2X</p><p>￥69</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/j4.png' alt='' width='80px' height='80px'></a><p>魅族 EP52</p><p>￥249</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/j5.png' alt='' width='80px' height='80px'></a><p>魅族 HD50</p><p>￥399</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/j6.png' alt='' width='80px' height='80px'></a><p>Flow Bass</p><p>￥599</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/j7.png' alt='' width='80px' height='80px'></a><p>JBL C100SI</p><p>￥88</p></li>
+								</ul>
+							</div>		
+						<div>
+					</li>
+					<li><a href='javascript:void(0);'>智能</a>
+						<div class='box'>	
+							<div class='nav-hide'>
+								<ul>
+									<li><a href='javascript:void(0)'><img src='./img/k1.png' alt='' width='80px' height='80px'></a><p>魅族手环</p><p>￥229</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/k2.png' alt='' width='80px' height='80px'></a><p>千幻五代3D眼镜</p><p>￥89</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/k3.png' alt='' width='80px' height='80px'></a><p>三星Gear Fit</p><p>￥1499</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/k4.png' alt='' width='80px' height='80px'></a><p>乐心MAMBO2</p><p>￥109</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/k5.jpg' alt='' width='80px' height='80px'></a><p>乐心手环3</p><p>￥249</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/k6.png' alt='' width='80px' height='80px'></a><p>魅族智能路由器</p><p>￥49</p></li>
+								</ul>
+							</div>		
+						<div>
+					</li>
+					<li><a href='javascript:void(0);'>生活</a>
+						<div class='box'>	
+							<div class='nav-hide'>
+								<ul>
+									<li><a href='javascript:void(0)'><img src='./img/l1.png' alt='' width='80px' height='80px'></a><p>魅蓝休闲旅行双肩包</p><p>￥199</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/l2.png' alt='' width='80px' height='80px'></a><p>魅蓝20寸旅行箱</p><p>￥349</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/l3.png' alt='' width='80px' height='80px'></a><p>Everyday乐游</p><p>￥599</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/l4.png' alt='' width='80px' height='80px'></a><p>魅蓝腰包</p><p>￥119</p></li>
+									<li><a href='javascript:void(0)'><img src='./img/l5.png' alt='' width='80px' height='80px'></a><p>天然乳胶枕</p><p>￥178</p></li>
+								</ul>
+							</div>		
+						<div>
+					
+					</li>
+					<li><a href='javascript:void(0)'>Flyme</a></li>
+					<li><a href='javascript:void(0)'>服务</a></li>
+					<li><a href='javascript:void(0)'>专卖店</a></li>
+					<li><a href='javascript:void(0)'>社区</a></li>
+					<li><a href='javascript:void(0)'>APP下载</a></li>	
+				</ul>
+			</div>
+			<div id='search'>
+				<div class='bor-der'>
+					<input type='text' name='' placeholder='魅族 16th' ><a href='javascript:void(0)'><img src='./img/SSK.png' alt='' ></a>
+				</div>
+			</div>
+			<div id='search-after'>
+				<ul>	
+					<li><a href='javascript:void(0)'><img src='./img/a.png' alt='' width='30px' height='30px'></a>
+						<div class='enter'>
+							<span></span>
+							<ul>
+								<li><a href='javascript:void(0)'>立即登陆</a></li>
+								<li><a href='javascript:void(0)'>立即注册</a></li>
+								<li><a href='javascript:void(0)'>我的订单</a></li>
+								<li><a href='javascript:void(0)'>M码通道</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href='javascript:void(0)'><img src='./img/b.png' alt='' width='30px' height='30px'></a>
+						<div class='shop'>
+							<span></span>
+							<div class='panda'><img src='./img/panda.png' alt=''></div>
+							<ul>
+								<li>登陆后可显示</li>
+								<li>您账号中已加入的商品哦~</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	<!--宣传栏轮播图-->
+		<div id="banner">
+			<div class="banner-list">
+				<div class="banner-img">
+					<a href="javascript:void(0)"><img src="./img/1.jpg" alt="" height="482px" ></a>
+				</div>
+				<div class="banner-img">
+					<a href="javascript:void(0)"><img src="./img/2.jpg" alt="" height="482px" ></a>
+				</div>
+				<div class="banner-img">
+					<a href="javascript:void(0)"><img src="./img/3.jpg" alt="" height="482px" ></a>
+				</div>
+				<div class="banner-img">
+					<a href="javascript:void(0)"><img src="./img/4.jpg" alt="" height="482px" ></a>
+				</div>
+				<div class="banner-img">
+					<a href="javascript:void(0)"><img src="./img/5.jpg" alt="" height="482px" ></a>
+				</div>
+				<div class="banner-img">
+					<a href="javascript:void(0)"><img src="./img/6.jpg" alt="" height="482px" ></a>
+				</div>
+			</div>
+			<div class="banner-dot">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="banner-click-left">
+				<span> &lt </span>
+			</div>
+			<div class="banner-click-right">
+				<span> &gt </span>
+			</div>
+			<div id='left-nav'>
+				<ul>
+					<li>手机
+						<div class='nav-list'>
+							<div class='display-area'>
+									<!--魅族手机-->
+									<div class='title' title='魅族手机' ><span>魅族手机</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='魅族 16th'><a href='javascript:void(0)'><img src='./img/z1.png' width='45px' height='45px'><span>魅族 16th</span></a></div>
+									<div title='魅族 16th Plus'><a href='javascript:void(0)'><img src='./img/z2.png' width='45px' height='45px'><span>魅族 16th Plus</span></a></div>
+									<div title='魅族 15 '><a href='javascript:void(0)'><img src='./img/z3.png' width='45px' height='45px'><span>魅族 15 </span></a></div>
+									<div title='魅族 15Plu'><a href='javascript:void(0)'><img src='./img/z4.png' width='45px' height='45px'><span>魅族 15Plus</span></a></div>
+									<div title='魅族 M15'><a href='javascript:void(0)'><img src='./img/z5.png' width='45px' height='45px'><span>魅族 M15</span></a></div>
+									<!--魅蓝手机-->
+									<div class='title' title='魅蓝手机'><span>魅蓝手机</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='魅蓝 6T'><a href='javascript:void(0)'><img src='./img/z6.png' width='45px' height='45px'><span>魅蓝 6T</span></a></div>
+									<div title='魅蓝 E3'><a href='javascript:void(0)'><img src='./img/z7.png' width='45px' height='45px'><span>魅蓝 E3</span></a></div>
+									<div title='魅蓝 S6'><a href='javascript:void(0)'><img src='./img/z8.png' width='45px' height='45px'><span>魅蓝 S6</span></a></div>
+									<div title='魅蓝 6'><a href='javascript:void(0)'><img src='./img/z9.png' width='45px' height='45px'><span>魅蓝 6</span></a></div>
+									<div title='魅蓝 Note6'><a href='javascript:void(0)'><img src='./img/z10.png' width='45px' height='45px'><span>魅蓝 Note6</span></a></div>
+							</div>
+						</div>
+					</li>
+					<li>智能设备
+						<div class='nav-list' style='width:748px;'>
+							<div class='display-area'>
+									<!--智能手环-->
+									<div class='title' title='智能手环' ><span>智能手环</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='魅族手环'><a href='javascript:void(0)'><img src='./img/x1.png' width='45px' height='45px'><span>魅族手环</span></a></div>
+									<div title='乐心心率手环MAMBO2'><a href='javascript:void(0)'><img src='./img/x2.png' width='45px' height='45px'><span>乐心心率手环MAMBO2</span></a></div>
+									<div title='乐心测心率手表fithood'><a href='javascript:void(0)'><img src='./img/x3.jpg' width='45px' height='45px'><span>乐心测心率手表fithood</span></a></div>
+									<div title='乐心运动手环 ziva plus'><a href='javascript:void(0)'><img src='./img/x4.png' width='45px' height='45px'><span>乐心运动手环 ziva plus</span></a></div>
+									<div title='乐心手环3 有氧能力监测'><a href='javascript:void(0)'><img src='./img/x5.jpg' width='45px' height='45px'><span>乐心手环3 有氧能力监测</span></a></div>
+									<div title='三星Gear Fit 手环'><a href='javascript:void(0)'><img src='./img/x6.png' width='45px' height='45px'><span>三星Gear Fit 手环</span></a></div>
+									<!--智能生活-->
+									<div class='title' title='智能生活'><span>智能生活</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='魅族智能路由器'><a href='javascript:void(0)'><img src='./img/x7.png' width='45px' height='45px'><span>魅族智能路由器</span></a></div>
+									<div title='魅族盒子 一键找回遥控器'><a href='javascript:void(0)'><img src='./img/x8.png' width='45px' height='45px'><span>魅族盒子 一键找回遥控器</span></a></div>
+									<div title='力博得口气清新棒'><a href='javascript:void(0)'><img src='./img/x9.png' width='45px' height='45px'><span>力博得口气清新棒</span></a></div>
+									<div title='飞科鼻毛修剪器 FS7805'><a href='javascript:void(0)'><img src='./img/x10.png' width='45px' height='45px'><span>飞科鼻毛修剪器 FS7805</span></a></div>
+									<div title='飞科剃须刀FS360'><a href='javascript:void(0)'><img src='./img/x11.jpg' width='45px' height='45px'><span>飞科剃须刀FS360</span></a></div>
+									<div title='德尔玛DX700S家用吸尘器'><a href='javascript:void(0)'><img src='./img/x12.png' width='45px' height='45px'><span>德尔玛DX700S家用吸尘器</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--智能眼镜-->
+									<div class='title' title='千幻五代3D眼镜'><span>智能眼镜</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='智能眼镜'><a href='javascript:void(0)'><img src='./img/x13.png' width='45px' height='45px'><span>千幻五代3D眼镜</span></a></div>
+									<div title='千幻六代3D眼镜'><a href='javascript:void(0)'><img src='./img/x14.png' width='45px' height='45px'><span>千幻六代3D眼镜</span></a></div>
+									<div title='博斯尼VR一体机 赠送手柄'><a href='javascript:void(0)'><img src='./img/x15.png' width='45px' height='45px'><span>博斯尼VR一体机 赠送手柄</span></a></div>
+									<div title='博斯尼E8微纤维VR盒子'><a href='javascript:void(0)'><img src='./img/x16.png' width='45px' height='45px'><span>博斯尼E8微纤维VR盒子</span></a></div>
+									<div title='千幻一代VR眼镜'><a href='javascript:void(0)'><img src='./img/x17.png' width='45px' height='45px'><span>千幻一代VR眼镜</span></a></div>
+									<!--智能家电-->
+									<div class='title' title='智能家电'><span>智能家电</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='扬子静音迷你多功能台夹扇'><a href='javascript:void(0)'><img src='./img/x18.png' width='45px' height='45px'><span>扬子静音迷你多功能台夹扇</span></a></div>
+									<div title='苏泊尔JD30R845电饼铛'><a href='javascript:void(0)'><img src='./img/x19.png' width='45px' height='45px'><span>苏泊尔JD30R845电饼铛</span></a></div>
+									<div title='德尔玛迷你香薰加湿器'><a href='javascript:void(0)'><img src='./img/x20.png' width='45px' height='45px'><span>德尔玛迷你香薰加湿器</span></a></div>
+									<div title='苏泊尔豆浆机家用'><a href='javascript:void(0)'><img src='./img/x21.png' width='45px' height='45px'><span>苏泊尔豆浆机家用</span></a></div>
+									<div title='苏泊尔电饭煲锅'><a href='javascript:void(0)'><img src='./img/x22.png' width='45px' height='45px'><span>苏泊尔电饭煲锅</span></a></div>
+							</div>
+						</div>
+					</li>
+					<li>游戏设备
+						<div class='nav-list' style='width:1122px;'>
+							<div class='display-area'>
+									<!--游戏手柄-->
+									<div class='title' title='游戏手柄'><span>游戏手柄</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='小鸡F1游戏手柄'><a href='javascript:void(0)'><img src='./img/c1.png' width='45px' height='45px'><span>小鸡F1游戏手柄</span></a></div>
+									<div title='小鸡G4无线蓝牙游戏手柄'><a href='javascript:void(0)'><img src='./img/c2.png' width='45px' height='45px'><span>小鸡G4无线蓝牙游戏手柄</span></a></div>
+									<div title='飞智wee拉伸手柄'><a href='javascript:void(0)'><img src='./img/c3.png' width='45px' height='45px'><span>飞智wee拉伸手柄</span></a></div>
+									<div title='GameSir小鸡F4游戏手柄'><a href='javascript:void(0)'><img src='./img/c4.png' width='45px' height='45px'><span>GameSir小鸡F4游戏手柄</span></a></div>
+									<div title='千幻C-08游戏手柄'><a href='javascript:void(0)'><img src='./img/c5.png' width='45px' height='45px'><span>千幻C-08游戏手柄</span></a></div>
+									<div title='千幻 B01无线蓝牙游戏手柄'><a href='javascript:void(0)'><img src='./img/c6.png' width='45px' height='45px'><span>千幻 B01无线蓝牙游戏手柄</span></a></div>
+									<!--游戏键鼠-->	
+									<div class='title' title='游戏键鼠'><span>游戏键鼠</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='黑爵机械战狼'><a href='javascript:void(0)'><img src='./img/c14.png' width='45px' height='45px'><span>黑爵机械战狼</span></a></div>
+									<div title='黑爵AJ119 机械游戏鼠标'><a href='javascript:void(0)'><img src='./img/c15.png' width='45px' height='45px'><span>黑爵AJ119 机械游戏鼠标</span></a></div>
+									<div title='黑爵325I 无线键盘鼠标'><a href='javascript:void(0)'><img src='./img/c16.png' width='45px' height='45px'><span>黑爵325I 无线键盘鼠标</span></a></div>
+									<div title='黑爵七色背光防水键盘'><a href='javascript:void(0)'><img src='./img/c17.png' width='45px' height='45px'><span>黑爵七色背光防水键盘</span></a></div>
+									<div title='黑爵守望者套件AK52'><a href='javascript:void(0)'><img src='./img/c18.png' width='45px' height='45px'><span>黑爵守望者套件AK52</span></a></div>
+									<div title='黑爵机械暴龙吃鸡键鼠套装'><a href='javascript:void(0)'><img src='./img/c19.png' width='45px' height='45px'><span>黑爵机械暴龙吃鸡键鼠套装</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--游戏耳机-->
+									<div class='title' title='游戏耳机'><span>游戏耳机</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='黑爵AX361游戏耳机'><a href='javascript:void(0)'><img src='./img/c10.png' width='45px' height='45px'><span>黑爵AX361游戏耳机</span></a></div>
+									<div title='硕美科G618 “吃鸡”游戏耳机'><a href='javascript:void(0)'><img src='./img/c11.png' width='45px' height='45px'><span>硕美科G618 “吃鸡”游戏耳机</span></a></div>
+									<div title='硕美科G941 震动款游戏耳机'><a href='javascript:void(0)'><img src='./img/c12.jpg' width='45px' height='45px'><span>硕美科G941 震动款游戏耳机</span></a></div>
+									<div title='黑爵AX300 头戴式游戏耳机'><a href='javascript:void(0)'><img src='./img/c13.png' width='45px' height='45px'><span>黑爵AX300 头戴式游戏耳机</span></a></div>
+									<!--按键-->	
+									<div class='title' title='按键' ><span>按键</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='博思尼Z813吃鸡按键'><a href='javascript:void(0)'><img src='./img/c20.png' width='45px' height='45px'><span>博思尼Z813吃鸡按键</span></a></div>
+									<div title='新游K8吃鸡神器按键'><a href='javascript:void(0)'><img src='./img/c21.jpg' width='45px' height='45px'><span>新游K8吃鸡神器按键</span></a></div>
+									<div title='涵诺吃鸡手游辅助按键器'><a href='javascript:void(0)'><img src='./img/c22.png' width='45px' height='45px'><span>涵诺吃鸡手游辅助按键器</span></a></div>
+									<div title='千幻 SC-B05吃鸡王座'><a href='javascript:void(0)'><img src='./img/c23.png' width='45px' height='45px'><span>千幻 SC-B05吃鸡王座</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--散热器-->
+									<div class='title' title='散热器'><span>散热器</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='九州风神 U PAL 笔记本散热器'><a href='javascript:void(0)'><img src='./img/c7.png' width='45px' height='45px'><span>九州风神 U PAL 笔记本散热器</span></a></div>
+									<div title='酷冷至尊 CMC3 9-15.4笔记本散热垫'><a href='javascript:void(0)'><img src='./img/c8.png' width='45px' height='45px'><span>酷冷至尊 CMC3 9-15.4笔记本散热垫</span></a></div>
+									<div title='酷冷至尊 I100 9-15.4笔记本散热垫'><a href='javascript:void(0)'><img src='./img/c9.png' width='45px' height='45px'><span>酷冷至尊 I100 9-15.4笔记本散热垫</span></a></div>
+							</div>
+						</div>
+					</li>
+					<li>数码影音
+						<div class='nav-list' style='width:748px;'>						
+							<div class='display-area'>
+									<!--魅族耳机-->
+									<div class='title' title='魅族耳机'><span>魅族耳机</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='POP 真无线蓝牙耳机'><a href='javascript:void(0)'><img src='./img/q1.png' width='45px' height='45px'><span>POP 真无线蓝牙耳机</span></a></div>
+									<div title='魅族 HALO 激光蓝牙耳机'><a href='javascript:void(0)'><img src='./img/q2.png' width='45px' height='45px'><span>魅族 HALO 激光蓝牙耳机</span></a></div>
+									<div title='魅族 LIVE'><a href='javascript:void(0)'><img src='./img/q3.png' width='45px' height='45px'><span>魅族 LIVE</span></a></div>
+									<div title='魅族 Flow Bass'><a href='javascript:void(0)'><img src='./img/q4.png' width='45px' height='45px'><span>魅族 Flow Bass</span></a></div>
+									<div title='魅蓝EP52'><a href='javascript:void(0)'><img src='./img/q5.png' width='45px' height='45px'><span>魅蓝EP52</span></a></div>
+									<div title='魅族 EP2X'><a href='javascript:void(0)'><img src='./img/q6.png' width='45px' height='45px'><span>魅族 EP2X</span></a></div>
+									<!--音响-->	
+									<div class='title' title='音响' ><span>音响</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='魅族蓝牙小音箱'><a href='javascript:void(0)'><img src='./img/q7.png' width='45px' height='45px'><span>魅族蓝牙小音箱</span></a></div>
+									<div title='魅族Gravity悬浮音响'><a href='javascript:void(0)'><img src='./img/q8.png' width='45px' height='45px'><span>魅族Gravity悬浮音响</span></a></div>
+									<div title='山进莫扎特原木便携蓝牙音箱收音机'><a href='javascript:void(0)'><img src='./img/q9.png' width='45px' height='45px'><span>山进莫扎特原木便携蓝牙音箱收音机</span></a></div>
+									<div title='天猫精灵 M1曲奇智能音箱'><a href='javascript:void(0)'><img src='./img/q10.png' width='45px' height='45px'><span>天猫精灵 M1曲奇智能音箱</span></a></div>
+									<div title='JBL GO 无线蓝牙音响'><a href='javascript:void(0)'><img src='./img/q11.png' width='45px' height='45px'><span>JBL GO 无线蓝牙音响</span></a></div>
+									<div title='小旺音箱 狗年生肖礼物'><a href='javascript:void(0)'><img src='./img/q12.png' width='45px' height='45px'><span>小旺音箱 狗年生肖礼物</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--魅族推荐-->
+									<div class='title' title='魅族推荐'><span>魅族推荐</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='JBL C100SI 超轻入耳线控通话耳机'><a href='javascript:void(0)'><img src='./img/q13.png' width='45px' height='45px'><span>JBL C100SI 超轻入耳线控通话耳机</span></a></div>
+									<div title='先锋 SEC-CL31S 耳机'><a href='javascript:void(0)'><img src='./img/q14.jpg' width='45px' height='45px'><span>先锋 SEC-CL31S 耳机</span></a></div>
+									<div title='先锋SEC-MJ101BT头戴式蓝牙耳机'><a href='javascript:void(0)'><img src='./img/q15.png' width='45px' height='45px'><span>先锋 SEC-MJ101BT头戴式蓝牙耳机</span></a></div>
+									<div title='先锋SEC-CL31 HIFI入耳式耳机'><a href='javascript:void(0)'><img src='./img/q16.png' width='45px' height='45px'><span>先锋SEC-CL31 HIFI耳机</span></a></div>
+									<div title='JBL T120A立体声入耳式耳机'><a href='javascript:void(0)'><img src='./img/q17.png' width='45px' height='45px'><span>JBL T120A耳机</span></a></div>
+									<div title='铁三角Audio Technica ATH-CK330IS'><a href='javascript:void(0)'><img src='./img/q18.png' width='45px' height='45px'><span>铁三角 ATH-CK330IS</span></a></div>
+									<div title='JBL T280A+耳机'><a href='javascript:void(0)'><img src='./img/q19.png' width='45px' height='45px'><span>JBL T280A耳机</span></a></div>
+									<div title='JBL Endurance Sprint'><a href='javascript:void(0)'><img src='./img/q20.png' width='45px' height='45px'><span>JBL Endurance Sprint</span></a></div>
+							</div>
+						<div>
+					</li>
+					<li>手机周边
+						<div class='nav-list' style='width:1122px;'>						
+							<div class='display-area'>
+									<!--魅族耳机-->
+									<div class='title' title='数据线'><span>数据线</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='魅族 Type-C 2.0数据线'><a href='javascript:void(0)'><img src='./img/W1.png' width='45px' height='45px'><span>魅族 Type-C 2.0数据线</span></a></div>
+									<div title='魅族Micro USB数据线'><a href='javascript:void(0)'><img src='./img/W2.png' width='45px' height='45px'><span>魅族Micro USB数据线</span></a></div>
+									<div title='魅族Type-C数据线'><a href='javascript:void(0)'><img src='./img/W3.png' width='45px' height='45px'><span>魅族Type-C数据线</span></a></div>
+									<div title='Micro USB数据线'><a href='javascript:void(0)'><img src='./img/W4.png' width='45px' height='45px'><span>Micro USB数据线</span></a></div>
+									<!--音响-->	
+									<div class='title' title='移动电源' ><span>移动电源</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='魅蓝双向闪充移动电源'><a href='javascript:void(0)'><img src='./img/W5.png' width='45px' height='45px'><span>魅蓝双向闪充移动电源</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--保护盖/后套/贴膜-->
+									<div class='title' title='保护盖/后套/贴膜'><span>保护盖/后套/贴膜</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='魅蓝 S6 保护壳'><a href='javascript:void(0)'><img src='./img/W6.png' width='45px' height='45px'><span>魅蓝 S6 保护壳</span></a></div>
+									<div title='PRO 7 亲肤保护壳'><a href='javascript:void(0)'><img src='./img/W7.png' width='45px' height='45px'><span>PRO 7 亲肤保护壳</span></a></div>
+									<div title='魅蓝 6 亲肤保护壳'><a href='javascript:void(0)'><img src='./img/W8.png' width='45px' height='45px'><span>魅蓝 6 亲肤保护壳</span></a></div>
+									<div title='魅蓝 Note6 轻薄保护壳'><a href='javascript:void(0)'><img src='./img/W9.png' width='45px' height='45px'><span>魅蓝 Note6 轻薄保护壳</span></a></div>
+									<div title='魅蓝 E3 亲肤保护壳'><a href='javascript:void(0)'><img src='./img/W10.png' width='45px' height='45px'><span>魅蓝 E3 亲肤保护壳</span></a></div>
+									<div title='魅蓝 15 高透保护膜'><a href='javascript:void(0)'><img src='./img/W11.png' width='45px' height='45px'><span>魅蓝 15 高透保护膜</span></a></div>
+									<!--存储卡-->
+									<div class='title' title='存储卡'><span>存储卡</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='三星存储卡32G/64G'><a href='javascript:void(0)'><img src='./img/W12.png' width='45px' height='45px'><span>三星存储卡32G/64G</span></a></div>
+									<div title='三星存储卡32G/64G'><a href='javascript:void(0)'><img src='./img/W12.png' width='45px' height='45px'><span>三星存储卡32G/64G</span></a></div>	
+							</div>
+							<div class='display-area'>
+									<!--电话卡-->
+									<div class='title' title='电话卡'><span>电话卡</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='广东电信不限流量卡'><a href='javascript:void(0)'><img src='./img/W13.png' width='45px' height='45px'><span>广东电信不限流量卡</span></a></div>
+									<!--手机镜头-->
+									<div class='title' title='手机镜头'><span>手机镜头</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='猎奇(LIEQI)手机镜头'><a href='javascript:void(0)'><img src='./img/W14.png' width='45px' height='45px'><span>猎奇(LIEQI)手机镜头</span></a></div>
+									<div title='FANIPICA微距鱼眼镜头套装'><a href='javascript:void(0)'><img src='./img/W15.png' width='45px' height='45px'><span>FANIPICA微距鱼眼镜头套装</span></a></div>	
+									<!--自拍杆-->
+									<div class='title' title='自拍杆'><span>自拍杆</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='魅族蓝牙自拍杆'><a href='javascript:void(0)'><img src='./img/W16.png' width='45px' height='45px'><span>魅族蓝牙自拍杆</span></a></div>
+									<div title='魅族缤纷 MINI自拍杆'><a href='javascript:void(0)'><img src='./img/W17.png' width='45px' height='45px'><span>魅族缤纷 MINI自拍杆</span></a></div>		
+							</div>
+						<div>			
+					</li>
+					<li>生活周边
+						<div class='nav-list' style='width:1122px;'>						
+							<div class='display-area'>
+									<!--背包-->
+									<div class='title' title='背包'><span>背包</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='魅蓝双肩包'><a href='javascript:void(0)'><img src='./img/E1.png' width='45px' height='45px'><span>魅蓝双肩包</span></a></div>
+									<div title='魅蓝数码收纳包'><a href='javascript:void(0)'><img src='./img/E2.png' width='45px' height='45px'><span>魅蓝数码收纳包</span></a></div>
+									<div title='魅蓝20寸旅行箱 酷MA萌定制版'><a href='javascript:void(0)'><img src='./img/E3.png' width='45px' height='45px'><span>魅蓝20寸旅行箱 酷MA萌定制版</span></a></div>
+									<div title='魅蓝胸包'><a href='javascript:void(0)'><img src='./img/E4.png' width='45px' height='45px'><span>魅蓝胸包</span></a></div>
+									<!--趣味零食-->	
+									<div class='title' title='趣味零食' ><span>趣味零食</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='芒果干138g*2袋'><a href='javascript:void(0)'><img src='./img/E5.png' width='45px' height='45px'><span>芒果干138g*2袋</span></a></div>
+									<div title='开心果300g 罐装'><a href='javascript:void(0)'><img src='./img/E6.jpg' width='45px' height='45px'><span>开心果300g 罐装</span></a></div>
+									<div title='烘焙紫皮腰果300g 罐装'><a href='javascript:void(0)'><img src='./img/E7.jpg' width='45px' height='45px'><span>烘焙紫皮腰果300g 罐装</span></a></div>
+									<div title='巴旦木仁400g 罐装'><a href='javascript:void(0)'><img src='./img/E8.jpg' width='45px' height='45px'><span>巴旦木仁400g 罐装</span></a></div>
+									<div title='开口榛子300g 罐装'><a href='javascript:void(0)'><img src='./img/E9.jpg' width='45px' height='45px'><span>开口榛子300g 罐装</span></a></div>
+									<div title='话梅瓜子300g 罐装'><a href='javascript:void(0)'><img src='./img/E10.jpg' width='45px' height='45px'><span>话梅瓜子300g 罐装</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--枕头-->
+									<div class='title' title='枕头'><span>枕头</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='多功能颈枕'><a href='javascript:void(0)'><img src='./img/E11.png' width='45px' height='45px'><span>多功能颈枕</span></a></div>
+									<div title='天然乳胶枕'><a href='javascript:void(0)'><img src='./img/E12.png' width='45px' height='45px'><span>天然乳胶枕</span></a></div>
+									<div title='怡眠诺梦汽车颈枕'><a href='javascript:void(0)'><img src='./img/E13.png' width='45px' height='45px'><span>怡眠诺梦汽车颈枕</span></a></div>
+									<div title='福满园儿童面包枕护颈椎枕'><a href='javascript:void(0)'><img src='./img/E14.png' width='45px' height='45px'><span>福满园儿童面包枕护颈椎枕</span></a></div>
+									<div title='怡眠诺梦天然乳胶枕'><a href='javascript:void(0)'><img src='./img/E15.png' width='45px' height='45px'><span>怡眠诺梦天然乳胶枕</span></a></div>
+									<!--垃圾桶-->
+									<div class='title' title='垃圾桶'><span>垃圾桶</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='umbra 家用带盖垃圾桶'><a href='javascript:void(0)'><img src='./img/E16.png' width='45px' height='45px'><span>umbra 家用带盖垃圾桶</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--挂钩-->
+									<div class='title' title='挂钩'><span>挂钩</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='加拿大umbra衣服物品挂钩'><a href='javascript:void(0)'><img src='./img/E17.png' width='45px' height='45px'><span>加拿大umbra衣服物品挂钩</span></a></div>
+									<div title='Umbra创意BUDDY挂钩'><a href='javascript:void(0)'><img src='./img/E18.png' width='45px' height='45px'><span>Umbra创意BUDDY挂钩</span></a></div>
+									<!--眼镜/眼罩-->	
+									<div class='title' title='眼镜/眼罩' ><span>眼镜/眼罩</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='cabecade防蓝光手机护目镜'><a href='javascript:void(0)'><img src='./img/E19.png' width='45px' height='45px'><span>cabecade防蓝光手机护目镜</span></a></div>
+									<div title='cabecade经典飞行员太阳镜'><a href='javascript:void(0)'><img src='./img/E20.png' width='45px' height='45px'><span>cabecade经典飞行员太阳镜</span></a></div>
+									<!--毛球修剪器-->
+									<div class='title' title='毛球修剪器'><span>毛球修剪器</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='加拿大umbra衣服物品挂钩'><a href='javascript:void(0)'><img src='./img/E17.png' width='45px' height='45px'><span>飞科 毛球修剪器FR5001</span></a></div>
+									<div title='Umbra创意BUDDY挂钩'><a href='javascript:void(0)'><img src='./img/E18.png' width='45px' height='45px'><span>飞科 剃去毛球器FR5210</span></a></div>
+							</div>
+						<div>
+					</li>
+					<li>个护健康
+						<div class='nav-list' style='width:1122px;'>
+							<div class='display-area'>
+									<!--剃须刀/刀头-->
+									<div class='title' title='剃须刀/刀头'><span>剃须刀/刀头</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='飞科剃须刀FS360'><a href='javascript:void(0)'><img src='./img/R1.jpg' width='45px' height='45px'><span>飞科剃须刀FS360</span></a></div>
+									<div title='飞科剃须刀FS373'><a href='javascript:void(0)'><img src='./img/R2.png' width='45px' height='45px'><span>飞科剃须刀FS373</span></a></div>
+									<div title='飞科剃须刀FS339'><a href='javascript:void(0)'><img src='./img/R3.png' width='45px' height='45px'><span>飞科剃须刀FS339</span></a></div>
+									<div title='飞科女士剃毛器FS7209'><a href='javascript:void(0)'><img src='./img/R4.jpg' width='45px' height='45px'><span>飞科女士剃毛器FS7209</span></a></div>
+									<div title='飞科剃须刀FR8(三片装)'><a href='javascript:void(0)'><img src='./img/R5.png' width='45px' height='45px'><span>飞科剃须刀FR8(三片装)</span></a></div>
+									<!--体重秤-->	
+									<div class='title' title='体重秤'><span>体重秤</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='乐心智能体脂秤Q1'><a href='javascript:void(0)'><img src='./img/R6.jpg' width='45px' height='45px'><span>乐心智能体脂秤Q1</span></a></div>
+									<div title='乐心智能体脂秤A3-F'><a href='javascript:void(0)'><img src='./img/R7.jpg' width='45px' height='45px'><span>乐心智能体脂秤A3-F</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--美发工具-->
+									<div class='title' title='美发工具'><span>美发工具</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='飞科 FH6270 大功率吹风机'><a href='javascript:void(0)'><img src='./img/R8.jpg' width='45px' height='45px'><span>飞科 FH6270大功率吹风机</span></a></div>
+									<div title='飞科 直发器FH6811'><a href='javascript:void(0)'><img src='./img/R9.jpg' width='45px' height='45px'><span>飞科 直发器FH6811</span></a></div>
+									<div title='飞科 电吹风FH6259'><a href='javascript:void(0)'><img src='./img/R10.jpg' width='45px' height='45px'><span>飞科 电吹风FH6259</span></a></div>
+									<!--清洁美容-->	
+									<div class='title' title='清洁美容' ><span>清洁美容</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='曼秀雷敦冰爽活炭洁面乳'><a href='javascript:void(0)'><img src='./img/R11.png' width='45px' height='45px'><span>曼秀雷敦冰爽活炭洁面乳</span></a></div>
+									<div title='玥之秘水晶防晒喷雾'><a href='javascript:void(0)'><img src='./img/R12.png' width='45px' height='45px'><span>玥之秘水晶防晒喷雾</span></a></div>
+									<div title='飞科 鼻毛修剪器FS7805'><a href='javascript:void(0)'><img src='./img/R13.png' width='45px' height='45px'><span>飞科 鼻毛修剪器FS7805</span></a></div>
+									<div title='曼秀雷敦 男士净黑头火山泥洁面'><a href='javascript:void(0)'><img src='./img/R14.png' width='45px' height='45px'><span>曼秀雷敦 男士净黑头火山泥洁面</span></a></div>
+									<div title='曼秀雷敦 男士清爽沐浴露'><a href='javascript:void(0)'><img src='./img/R15.png' width='45px' height='45px'><span>曼秀雷敦 男士清爽沐浴露</span></a></div>
+									<div title='飞科女士剃毛器FS7209'><a href='javascript:void(0)'><img src='./img/R16.jpg' width='45px' height='45px'><span>飞科女士剃毛器FS7209</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--电动牙刷-->
+									<div class='title' title='电动牙刷'><span>电动牙刷</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='力博得I2极光声波电动牙刷'><a href='javascript:void(0)'><img src='./img/R17.png' width='45px' height='45px'><span>力博得I2极光声波电动牙刷</span></a></div>
+									<div title='力博得I2时光声波电动牙刷礼盒'><a href='javascript:void(0)'><img src='./img/R18.png' width='45px' height='45px'><span>力博得I2时光声波电动牙刷礼盒</span></a></div>
+									<div title='Mcomb A1 便携式电动牙刷'><a href='javascript:void(0)'><img src='./img/R19.jpg' width='45px' height='45px'><span>Mcomb A1 便携式电动牙刷</span></a></div>
+									<div title='力博得儿童声波电动牙刷'><a href='javascript:void(0)'><img src='./img/R20.png' width='45px' height='45px'><span>力博得儿童声波电动牙刷</span></a></div>
+							</div>
+						</div>
+					</li>
+					<li>居家用品
+						<div class='nav-list' style='width:1122px;'>
+							<div class='display-area'>
+									<!--水杯-->
+									<div class='title' title='水杯'><span>水杯</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='酷仕客不锈钢保温杯'><a href='javascript:void(0)'><img src='./img/T1.png' width='45px' height='45px'><span>酷仕客不锈钢保温杯</span></a></div>
+									<div title='酷仕客不锈钢咖啡杯'><a href='javascript:void(0)'><img src='./img/T2.png' width='45px' height='45px'><span>酷仕客不锈钢咖啡杯</span></a></div>
+									<div title='谷的家时间胶囊杯'><a href='javascript:void(0)'><img src='./img/T3.png' width='45px' height='45px'><span>谷的家时间胶囊杯</span></a></div>
+									<div title='谷的家时间胶囊杯套装'><a href='javascript:void(0)'><img src='./img/T4.png' width='45px' height='45px'><span>谷的家时间胶囊杯套装</span></a></div>
+									<div title='谷的家小鱼杯'><a href='javascript:void(0)'><img src='./img/T5.png' width='45px' height='45px'><span>谷的家小鱼杯</span></a></div>
+									<!--厨房用品-->	
+									<div class='title' title='厨房用品'><span>厨房用品</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='造物家用厨房五边形餐具防烫耐高温垫'><a href='javascript:void(0)'><img src='./img/T6.png' width='45px' height='45px'><span>造物家用厨房五边形餐具防烫耐高温垫</span></a></div>
+									<div title='盈乔宜厨房湿巾'><a href='javascript:void(0)'><img src='./img/T7.png' width='45px' height='45px'><span>盈乔宜厨房湿巾</span></a></div>
+									<div title='盈乔宜懒人抹布'><a href='javascript:void(0)'><img src='./img/T8.png' width='45px' height='45px'><span>盈乔宜懒人抹布</span></a></div>
+									<div title='盈乔宜地板湿巾'><a href='javascript:void(0)'><img src='./img/T7.png' width='45px' height='45px'><span>盈乔宜地板湿巾</span></a></div>
+									<div title='佐敦朱迪 小熊饭勺'><a href='javascript:void(0)'><img src='./img/T9.jpg' width='45px' height='45px'><span>佐敦朱迪 小熊饭勺</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--清洁用品-->
+									<div class='title' title='清洁用品'><span>清洁用品</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='盈乔宜防串色洗衣片'><a href='javascript:void(0)'><img src='./img/T10.png' width='45px' height='45px'><span>盈乔宜防串色洗衣片</span></a></div>
+									<div title='盈乔宜原木竹纤维湿巾'><a href='javascript:void(0)'><img src='./img/T11.png' width='45px' height='45px'><span>盈乔宜原木竹纤维湿巾</span></a></div>
+									<div title='佐敦朱迪 时尚便携粘毛器'><a href='javascript:void(0)'><img src='./img/T12.jpg' width='45px' height='45px'><span>佐敦朱迪 时尚便携粘毛器</span></a></div>
+									<div title='德尔玛家用地板喷雾喷水拖把'><a href='javascript:void(0)'><img src='./img/T13.png' width='45px' height='45px'><span>德尔玛家用地板喷雾喷水拖把</span></a></div>
+									<!--收纳用品-->	
+									<div class='title' title='收纳用品' ><span>收纳用品</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='佐敦朱迪 时尚纸巾盒'><a href='javascript:void(0)'><img src='./img/T14.jpg' width='45px' height='45px'><span>佐敦朱迪 时尚纸巾盒</span></a></div>
+									<div title='佐敦朱迪 旅行分装瓶'><a href='javascript:void(0)'><img src='./img/T15.jpg' width='45px' height='45px'><span>佐敦朱迪 旅行分装瓶</span></a></div>
+							</div>
+							<div class='display-area'>
+									<!--餐具-->
+									<div class='title' title='餐具'><span>餐具</span><a href='javascript:void(0)' class='right-head'> > </a></div>
+									<div title='佐敦朱迪 时尚三件套餐具'><a href='javascript:void(0)'><img src='./img/T16.jpg' width='45px' height='45px'><span>佐敦朱迪 时尚三件套餐具</span></a></div>
+									<div title='谷的家家用玉米筷(五双装)'><a href='javascript:void(0)'><img src='./img/T17.png' width='45px' height='45px'><span>谷的家家用玉米筷(五双装)</span></a></div>
+									<div title='谷的家家用玉米筷(单双装)'><a href='javascript:void(0)'><img src='./img/T18.png' width='45px' height='45px'><span>谷的家家用玉米筷(单双装)</span></a></div>
+									<div title='谷的家儿童玉米筷(两双装)'><a href='javascript:void(0)'><img src='./img/T19.png' width='45px' height='45px'><span>谷的家儿童玉米筷(两双装)</span></a></div>
+									<div title='造物家用办公六边形餐具水杯防烫耐高温杯垫'><a href='javascript:void(0)'><img src='./img/T20.png' width='45px' height='45px'><span>造物家用办公六边形餐具水杯防烫耐高温杯垫</span></a></div>
+									<div title='谷的家月光饭盒'><a href='javascript:void(0)'><img src='./img/T21.png' width='45px' height='45px'><span>谷的家月光饭盒</span></a></div>
+									<div title='谷的家宝石储物盒'><a href='javascript:void(0)'><img src='./img/T22.png' width='45px' height='45px'><span>谷的家宝石储物盒</span></a></div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	<!--宣传栏轮播图JS-->
+		<script type="text/javascript">
+			(function(){	
+				var ban=document.getElementById("banner");
+				var banlist=ban.getElementsByClassName("banner-list")[0];
+				var banimg=banlist.getElementsByClassName("banner-img");
+				var bandot=ban.getElementsByClassName("banner-dot")[0];
+				var banspan=bandot.getElementsByTagName("span");
+				var banleft=ban.getElementsByClassName("banner-click-left")[0];
+				var banright=ban.getElementsByClassName("banner-click-right")[0];
+				var num;  //索引值
+				var enterban; //自动轮播
+				banimg[0].style.opacity=1;
+				banspan[0].style.backgroundColor="rgb(0,195,245)";  //初始样式
+				
+				function clearcss(){			//每次触发事件时候清空样式
+					for(var j=0;j<banspan.length;j++){
+					banspan[j].style.backgroundColor="";
+					banimg[j].style.opacity=0;}		
+				}
+				
+				function setcss(){			//设置样式
+					banimg[num].style.opacity=1;
+					banspan[num].style.backgroundColor="rgb(0,195,245)";	
+				}
+				
+				function autoban(){			//自动轮播函数
+					num=num%(banspan.length);	//取余
+					clearcss();  //每次调用清空初始样式
+					setcss();		//设置样式
+					num++;
+				}
+				
+				function Enterban(){
+			 		enterban=setInterval(autoban,5000);  //5s轮播一次
+				}
+
+				function Exitban(){
+					clearInterval(enterban);
+				}
+				
+				//加载后触发自动轮播
+				Enterban();
+				//给banspan绑定序列号
+				for(var i=0;i<banspan.length;i++){
+						banspan[i].index=i;
+						//num=banspan[i].index;
+						num=0;  //初始化序列号值，如果不初始化num值为banspan.length
+						banspan[i].onmouseover=function(){	//鼠标移动事件
+							Exitban();	//清除轮播，避免多次触发事件重复计时
+							num=this.index;  //获取序列号
+							clearcss();  //每次触发事件时候清空样式
+							setcss();		//设置样式
+							Enterban();  //插入轮播
+						}
+					}
+
+					
+				//点击右箭头向右切换
+				banright.onclick=function(){
+					++num;
+					num=num%(banspan.length);	//取余
+					clearcss();  //每次调用清空初始样式
+					setcss();		//设置样式
+				}
+				//点击左箭头向左切换
+				banleft.onclick=function(){
+					--num;
+					try{
+						clearcss(); //每次调用清空初始样式
+						setcss();		//设置样式
+					}
+					catch(ex){
+						num=banspan.length-1; //每次调用清空初始样式
+						clearcss(); //每次调用清空初始样式
+						setcss();		//设置样式
+					}
+				}
+				banleft.onmouseover=function(){Exitban()};
+				banleft.onmouseout=function(){Enterban()};
+				banright.onmouseover=function(){Exitban()};
+				banright.onmouseout=function(){Enterban()};			
+			})()
+		</script>
+	<!--静态展示区-->
+		<div id='banner-bottom'>
+			<ul>
+				<li style="border:1px solid #cccccc;">
+					<a href='javascript:void(0)'><img src='./img/aaa.png'></a>
+					<a href='javascript:void(0)'><img src='./img/bbb.png'></a>
+					<a href='javascript:void(0)'><img src='./img/ccc.png'></a>
+					<a href='javascript:void(0)'><img src='./img/ddd.png'></a>
+				</li>
+				<a href='javascript:void(0)'><li><img src='./img/aa1.jpg'></li></a>
+				<a href='javascript:void(0)'><li><img src='./img/aa2.jpg'></li></a>
+				<a href='javascript:void(0)'><li><img src='./img/aa3.jpg'></li></a>
+				<a href='javascript:void(0)'><li><img src='./img/aa4.jpg'></li></a>
+			</ul>
+		</div>
+	<!--热销商品动态展示区-->
+		<div id='hotobject'>
+			<h2>热品推荐<a> > </a><a> < </a></h2>
+			<div class='hot'>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/b1.png' alt='' width='200px' height='200px'>
+					<span>魅族 16th</span>
+					<span style='font-size:12px;color:red;border:1px solid red;width:27px;height:18px;line-height:18px;text-align:center'>新品</span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>2698</span> 起</span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/b2.png' alt='' width='200px' height='200px'>
+					<span>魅族 16th Plus</span>
+					<span style='font-size:12px;color:red;border:1px solid red;width:27px;height:18px;line-height:18px;text-align:center'>新品</span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>3198</span> 起</span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/b3.png' alt='' width='200px' height='200px'>
+					<span>魅族 15</span>
+					<span style='font-size:12px;color:red;border:1px solid red;width:54px;height:18px;line-height:18px;text-align:center'>热销机型</span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>1998</span> 起</span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/b4.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 E3</span>
+					<span style='font-size:12px;color:red;border:1px solid red;width:54px;height:18px;line-height:18px;text-align:center'>热销机型</span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>1799</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/b5.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 S6</span>
+					<span style='font-size:12px;color:red;border:1px solid red;width:54px;height:18px;line-height:18px;text-align:center'>热销机型</span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>999</span> 起</span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/b6.png' alt='' width='200px' height='200px'>
+					<span>魅族手环</span>
+					<span style='font-size:12px;color:#cccccc;text-align:center'>腕间流动的心率专家</span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>169</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/b7.png' alt='' width='200px' height='200px'>
+					<span>魅族Gravity悬浮音响</span>
+					<span style='font-size:12px;color:#cccccc;text-align:center'>12期免息 日消费也就3.01</span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>1099</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/b8.png' alt='' width='200px' height='200px'>
+					<span>黑爵机械战狼键鼠两套装</span>
+					<span style='font-size:12px;color:#cccccc;text-align:center'>金属面板 机械手感 红驱动鼠标</span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>99</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/b9.png' alt='' width='200px' height='200px'>
+					<span>乐心心率手环MAMBO2</span>
+					<span style='font-size:12px;color:#cccccc;text-align:center'>支持3期免息 24小时心率监测</span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>109</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/b10.png' alt='' width='200px' height='200px'>
+					<span>魅族智能路由器</span>
+					<span style='font-size:12px;color:#cccccc;text-align:center'>简单便携 即插即用</span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>49</span></span>
+				</a></div>
+			</div>
+		</div>
+	<!--热销商品动态展示区JS-->
+		<script type="text/javascript">
+		(function(){
+			var hotobject=document.getElementById('hotobject');
+			var h2=hotobject.getElementsByTagName('h2')[0];
+			var change=h2.getElementsByTagName('a');	/*获取点击事件a标签*/
+			var hot=hotobject.getElementsByClassName('hot')[0];
+			var i;	/*setInterval返回值*/
+			var j;	/*setTimeout返回值*/
+			var hotpicture=hot.getElementsByClassName('hotpicture');
+				change[1].style.opacity='1'		/*初始箭头样式*/
+				
+				function right(){
+					hot.style.transform='translatex(-1240px)';
+					change[1].style.opacity='0.2';
+					change[0].style.opacity='1';
+				}
+				function left(){
+					hot.style.transform='translatex(0px)';
+					change[0].style.opacity='0.2'
+					change[1].style.opacity='1';
+				}
+				/*向右点击*/
+				change[0].onclick=function (){	
+					right();
+				}
+				/*向左点击*/
+				change[1].onclick=function (){	
+					left();
+				}
+
+				/*自动轮播*/
+				function autoban(){
+					i=setInterval(function(){	
+							right();
+							j=setTimeout(left,4000)
+						},8000);
+				}
+				/*停止轮播*/
+				function stopban(){
+					clearInterval(i);
+					clearInterval(j);
+				}
+				autoban();
+				
+				for(var j=0;j<hotpicture.length;j++){	/*绑定鼠标经过和移走事件。经过时候终止计时器，移走时候又执行自动轮播*/
+					hotpicture[j].onmouseover=function(){
+						stopban();
+					}
+					hotpicture[j].onmouseout=function(){
+						autoban();
+					}
+				}
+		})()
+		</script>
+	<!--热区广告1-->
+		<div class='hotarea'>
+			<a href='javascript:void(0)' title='魅族 Note6'><img src='./img/hot1.png' alt=''></a>
+		</div>
+	<!--商品栏1-->
+		<div id='shoparea'>
+			<h2><span style='float:left;line-height:28px;'>手机</span><a style='float:left;width:62px;margin-left:32px;margin-top:8px;border-bottom:3px solid rgb(102,102,102);opacity:.6;'> 热销机型 </a><a href='javascript:void(0)' style='width:39px;margin-top:12px;'> 更多&gt </a></h2>
+			<div class='hot' style="height:720px;width:1240px;">
+				<div class='hotpicture first' style='background-image:url(./img/u1.jpg);background-size:100%;'><a href='javascript:void(0)'>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/u2.png' alt='' width='200px' height='200px'>
+					<span>魅族 16th</span>
+					<span><span style='display:inline-block;margin:0;width:39px;font-size:12px;color:red;border:1px solid red;'>新品</span><span style='display:inline-block;margin:0;width:113px;font-size:12px;color:red;'>骁龙845 年度旗舰</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>2698</span> 起</span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/u2.png' alt='' width='200px' height='200px'>
+					<span>魅族 16th Plus</span>
+					<span><span style='display:inline-block;margin:0;width:39px;font-size:12px;color:red;border:1px solid red;'>新品</span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:red;'>每日十点限量100台预售</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>3198</span> 起</span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/u3.png' alt='' width='200px' height='200px'>
+					<span>魅族 15</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>魅族15系列最高降501元</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>1998</span> 起</span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/u4.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 15 Plus</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>定位全面屏,人机交互新体验</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>2498</span> 起</span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/u5.png' alt='' width='200px' height='200px'>
+					<span>魅族 E3</span>
+					<span><span style='display:inline-block;margin:0;width:39px;font-size:12px;color:red;border:1px solid red;'>领券</span><span style='display:inline-block;margin:0;width:90px;font-size:12px;color:red;'>领券减100元</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>1799</span></span>
+					<!--特惠图案-->
+					<div style='position:absolute;top:20px;right:20px;;width:40px;height:40px;border-radius:40px;background:#f0415f;text-align:center;line-height:40px;color:white;font-size:14px;'>特惠</div>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/u6.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 S6</span>
+					<span><span style='display:inline-block;margin:0;width:39px;font-size:12px;color:red;border:1px solid red;'>领券</span><span style='display:inline-block;margin:0;width:110px;font-size:12px;color:red;'>领券最高减120元</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>999</span>起</span>
+					<!--特惠图案-->
+					<div style='position:absolute;top:20px;right:20px;;width:40px;height:40px;border-radius:40px;background:#f0415f;text-align:center;line-height:40px;color:white;font-size:14px;'>特惠</div>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/u7.png' alt='' width='200px' height='200px'>
+					<span>魅族 M15</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>支持人脸识别,抬腕即解锁</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>1398</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/u8.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 6</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>忠于体验 打磨颜值</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>799</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/u9.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 6T</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>领券立减50元</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>799</span>起</span>
+				</a></div>
+			</div>
+		</div>
+	<!--热区广告2-->
+		<div class='hotarea'>
+			<a href='javascript:void(0)' title='HALO'><img src='./img/hot2.png' alt=''></a>
+		</div>
+	<!--商品栏2-->
+		<div id='shoparea'>
+			<h2><span style='float:left;line-height:28px;'>数码配件</span><a style='float:left;width:62px;margin-left:32px;margin-top:8px;border-bottom:3px solid rgb(102,102,102);opacity:.6;'> 超值推荐 </a><a href='javascript:void(0)' style='width:39px;margin-top:12px;'> 更多&gt </a></h2>
+			<div class='hot' style="height:720px;width:1240px;">
+				<a href='javascript:void(0)'><div class='hotpicture first' style='background-image:url(./img/N1.jpg);background-size:102%;'>
+				</div></a>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/N2.png' alt='' width='200px' height='200px'>
+					<span>魅族Gravity悬浮音响</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>12期免息 日消费也就3.01</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>1099</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/N3.png' alt='' width='200px' height='200px'>
+					<span>魅蓝EP52蓝牙耳机</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>轻盈悦耳 动无拘束</span></span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>249</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/N4.png' alt='' width='200px' height='200px'>
+					<span>魅族HD50 头戴式耳机</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>清新简介 有音质更有颜值</span></span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>299</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/N5.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 EP51蓝牙运动耳机</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>臻享音质 自在运动</span></span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>169</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/N6.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 休闲旅行双肩包</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>曲面一体式 多功能隔层</span></span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>169</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/N7.png' alt='' width='200px' height='200px'>
+					<span>魅族 EP2X耳机</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>契合声音的流动之美</span></span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>69</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/N8.png' alt='' width='200px' height='200px'>
+					<span>魅族 Flow Bass三单元耳机</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>延续经典 重赋新声</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>599</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/N9.png' alt='' width='200px' height='200px'>
+					<span>魅蓝双向闪充移动电源</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>潮流新色 闪充升级</span></span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>149</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/N10.png' alt='' width='200px' height='200px'>
+					<span>魅蓝胸包</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>时尚个性 动无拘束</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>119</span></span>
+				</a></div>
+			</div>
+		</div>
+	<!--热区广告3-->
+		<div class='hotarea'>
+			<a href='javascript:void(0)' title='小黄人移动电源'><img src='./img/hot3.png' alt=''></a>
+		</div>
+	<!--商品栏3-->
+		<div id='three-shoparea'>
+			<h2><span style='float:left;line-height:28px;'>手机周边</span><a class='' style='float:left;width:62px;margin-left:32px;margin-top:8px;'> 超值推荐 </a><a class='' style='float:left;width:121px;margin-left:32px;margin-top:8px;'> 数据线/电源适配器 </a><a class='' style='float:left;width:111px;margin-left:32px;margin-top:8px;'> 保护套/后套/贴膜 </a><a href='javascript:void(0)' style='width:39px;margin-top:12px;'> 更多> </a></h2>
+			<div class='hot' style="">
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/F1.png' alt='' width='200px' height='200px'>
+					<span>三星存储卡32G/64G</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>支持3期免息 升级版</span></span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>89</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/F2.png' alt='' width='200px' height='200px'>
+					<span>魅族Micro USB数据线</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>广泛兼容 经久耐用</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>29</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/F3.png' alt='' width='200px' height='200px'>
+					<span>魅族 Type-C 2.0数据线</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>5A大电流充电 高速传输</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>59</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/F4.png' alt='' width='200px' height='200px'>
+					<span>快充电源适配器(UP0830S)</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>快速充电 安全无忧</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>89</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/F5.png' alt='' width='200px' height='200px'>
+					<span>魅族Micro USB金属数据线</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>耐用  才好用</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>29</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/F6.png' alt='' width='200px' height='200px'>
+					<span>魅族Type-C 金属数据线</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>支持2A快速充电 耐用又放心</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>39</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/F7.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 Note6 潮趣真我保护壳</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>致敬艺术经典</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>49</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/F8.png' alt='' width='200px' height='200px'>
+					<span>魅蓝E3 亲肤保护壳</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>亲肤材质触感 防摔放磕性能</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>29</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/F9.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 S6 全贴合防爆保护膜</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>纤薄通透 持久防护</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>29</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/F10.png' alt='' width='200px' height='200px'>
+					<span>魅族 15 高透保护膜</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>93%高透光率 通透顺滑</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>19</span></span>
+				</a></div>
+			</div>
+ 			<div class='hot' style="display:none;">
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/P1.png' alt='' width='200px' height='200px'>
+					<span>魅族Type-C发光数据线</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>贴心指引 无惧黑暗</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>69</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/P1.png' alt='' width='200px' height='200px'>
+					<span>魅族 Micro USB发光数据线</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>贴心指引 无惧黑暗</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>59</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/P2.png' alt='' width='200px' height='200px'>
+					<span>魅族二合一金属数据线</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>二合一 全兼容</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>49</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/P3.png' alt='' width='200px' height='200px'>
+					<span>魅族Type-C转接头</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>小巧便携 随心转换</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>19</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/P4.jpg' alt='' width='200px' height='200px'>
+					<span>魅族双口车载充电器</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>双口充电 智能识别</span></span>
+					<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>39</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/P5.png' alt='' width='200px' height='200px'>
+					<span>双口旅行充电器</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>环保防护 安全防护</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>69</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/P6.jpg' alt='' width='200px' height='200px'>
+					<span>魅族Micro USB熊猫数据线</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>柔韧耐磨 全面兼容</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>49</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/P7.png' alt='' width='200px' height='200px'>
+					<span>ORICO 快充充电器</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>高度兼容 安稳放置</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>148</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/P8.png' alt='' width='200px' height='200px'>
+					<span>罗马仕IG10钢琴移动电源</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>安全可靠随身携带</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>159</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/P2.png' alt='' width='200px' height='200px'>
+					<span>魅族二合一金属数据线</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>二合一 全兼容</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>49</span></span>
+				</a></div>
+			</div>
+			<div class='hot' style="display:none;">
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/M1.png' alt='' width='200px' height='200px'>
+					<span>PRO 7 全贴合防爆保护膜</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>坚韧材质 无惧摩擦冲击</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>59</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/M2.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 S6 轻薄保护壳</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>轻薄与美感集于一身</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>19</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/M3.png' alt='' width='200px' height='200px'>
+					<span>魅族 15 Plus 轻薄保护壳</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>轻薄与美感集于一身</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>19</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/M4.png' alt='' width='200px' height='200px'>
+					<span>魅族 Note6 亲肤保护壳</span>
+					<span><span style='display:inline-block;margin:0;width:150px;font-size:12px;color:#ccc;'>出众性能 全面防护</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>29</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/M5.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 E3 高透膜</span>
+					<span><span style='display:inline-block;margin:0;width:260px;font-size:12px;color:#ccc;'>防油防污防水，避免变形和气泡</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>29</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/M6.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 S6 高透保护膜</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>给双眸清晰享受</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>19</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/M7.png' alt='' width='200px' height='200px'>
+					<span>魅族 15 轻薄保护壳</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>轻薄与美感集于一身</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>19</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/M8.png' alt='' width='200px' height='200px'>
+					<span>魅族 15 高透保护膜</span>
+					<span><span style='display:inline-block;margin:0;width:260px;font-size:12px;color:#ccc;'>93%高透光率 通透顺滑</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>19</span></span>
+				</a></div>
+				<div class='hotpicture'><a href='javascript:void(0)'>
+					<img src='./img/M9.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 S6 潮趣真我保护壳</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>致敬艺术经典</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>49</span></span>
+				</a></div>
+				<div class='hotpicture' style='margin-right:0px;'><a href='javascript:void(0)'>
+					<img src='./img/M10.png' alt='' width='200px' height='200px'>
+					<span>魅蓝 Note6 潮趣真我保护壳</span>
+					<span><span style='display:inline-block;margin:0;width:160px;font-size:12px;color:#ccc;'>致敬艺术经典</span></span>
+					<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>49</span></span>
+				</a></div>
+			</div>
+		</div>	
+	<!--商品栏3JS-->
+		<script type="text/javascript">
+			(function(){
+				var threeshoparea=document.getElementById('three-shoparea');
+				var h2=threeshoparea.getElementsByTagName('h2')[0];
+				var a=h2.getElementsByTagName('a');			/*切记最后一个a标签不要取到。只取0 1 2 */
+				var hot=threeshoparea.getElementsByClassName('hot');
+				var num;       /*索引序列值*/
+				a[0].className='bortom';	/*初始化*/
+				a[0].style.opacity='1';
+				/*绑定a标签mouseover事件*/
+				for(var j=0;j<a.length-1;j++){
+					a[j].index=j;							/*自定义属性储存序列值*/
+					num=a[j].index;
+					a[j].onmouseover=function(){
+						num=this.index;							/*获取当前事件的序列值*/
+						for(var k=0;k<a.length-1;k++){				/*每次移动到其他地方后清除其他样式*/
+							a[k].style.opacity='.4';
+							a[k].className='';							
+							hot[k].style.display='none';
+						}						
+						this.style.opacity='1';
+						this.className='bortom';
+						hot[num].style.display='block';
+					}
+				}
+			})()
+		</script>
+	<!--底部-->
+		<div id='footer'>
+			<div class='promise'>
+				<div class='box'>
+					<a href='javascript:void(0)'><img src="./img/Y1.png" alt=""></a>
+					<span>全场顺丰包邮</span>
+				</div>
+				<div class='box'>
+					<a href='javascript:void(0)'><img src="./img/Y2.png" alt=""></a>
+					<span>100+城市次日送达</span>
+				</div>
+				<div class='box'>
+					<a href='javascript:void(0)'><img src="./img/Y3.png" alt=""></a>
+					<span>7天无理由退货</span>
+				</div>
+				<div class='box'>
+					<a href='javascript:void(0)'><img src="./img/Y4.png" alt=""></a>
+					<span>15天换货保障</span>
+				</div>
+				<div class='box'>
+					<a href='javascript:void(0)'><img src="./img/Y5.png" alt=""></a>
+					<span>1年免费保修</span>
+				</div>
+				<div class='box'>
+					<a href='javascript:void(0)'><img src="./img/Y6.png" alt=""></a>
+					<span>上门快修</span>
+				</div>
+				<div class='self'>
+				<p style='color:#999;font-size:12px;'>周一至周日 7:30-24:00</p>
+				<p style='font-size:25px;color:#00c3f5'>400-788-3333</p>
+				<a href='javascript:void(0)'><span style='display:inline-block;width:88px;height:30px;background:#00c3f5;border-radius:20px;'><p style='color:white;line-height:30px;text-align:center;font-size:14px;'>在线客服</p><span></a>
+				</div>
+			</div>
+		
+			<div class='detail'>
+				<ul>
+					<li><a href='javascript:void(0)'>了解魅族</a></li>
+					<li><a href='javascript:void(0)'>加入我们</a></li>
+					<li><a href='javascript:void(0)'>联系我们</a></li>
+					<li><a href='javascript:void(0)'>Flyme</a></li>
+					<li><a href='javascript:void(0)'>魅族社区</a></li>
+					<li><a href='javascript:void(0)'>天猫旗舰店</a></li>
+					<li><a href='javascript:void(0)'>问题反馈</a></li>
+					<li><a href='javascript:void(0)'>线上销售授权名单公示</a></li>
+					<li><a href='javascript:void(0)'>出版物经营许可证</a></li>
+					<span><span><img src='./img/I1.png' width='18px' height='18px';></span>简体中文
+					<div class='langue'>
+						<ul>
+							<li><a href='javascript:void(0)'><span><img src='./img/I1.png' width='18px' height='18px';></span>简体中文</span></a></li>
+							<li><a href='javascript:void(0)'><span><img src='./img/I2.png' width='18px' height='18px';></span>繁體中文</span></a></li>
+							<li><a href='javascript:void(0)'><span><img src='./img/I3.png' width='18px' height='18px';></span>English</span></a></li>
+							<li><a href='javascript:void(0)'><span><img src='./img/I4.png' width='18px' height='18px';></span>Русский</span></a></li>
+						</ul>
+					</div>
+					</span>
+				</ul>
+				<span class='lastline'>
+					<ul>
+						<li>©2018 Meizu Telecom Equipment Co., Ltd. All rights reserved.</li>
+						<li><a href='javascript:void(0)'> 粤ICP备13003602号-2</a></li>
+						<li><a href='javascript:void(0)'> 合字B2-20170010</a></li>
+						<li><a href='javascript:void(0)'> 营业执照</a></li>
+						<li><a href='javascript:void(0)'> 法律声明</a></li>
+						<li><img src='./img/last1.png'>粤公网安备 44049102496009 号</li>
+						<span class='safe'></span>
+						<span class='police'></span>
+						<span class='xin'></span>
+						<span class='qzone'></span>
+						<span class='wx'><div class='erweima'><img src='./img/erweima.jpg' alt='' width='180px' height='180px'></div></span>
+						<span class='wb'></span>
+					</ul>
+				</span>
+			</div>
+	<!--侧向导航栏-->
+		<div id='right-nav'>
+			<a href='javascript:void(0);'><div class='shop'><img src="./img/shop.png" alt="" width='50px' height='50px'><span>购物车</span></div></a>
+			<a href='javascript:void(0);'><div class='app' style='border-top:1px solid white;position:relative;'><img src="./img/app.png" alt="" width='50px' height='50px'><span></span><div class='apperweima'><img src="./img/appma.png" alt="" width='145px' height='145px'><p style='line-height:40px;text-align:center;font-size:14px;color:white;'>扫码下载魅族商城</p></div></div></a>
+			<a href='#'><div class='backtop' style='border-top:1px solid white;'><img src="./img/top.png" alt="" width='50px' height='50px'><span>回到顶部</span></div></a>
+		</div>
+	<!--侧向导航栏JS-->
+		<script type="text/javascript">
+			/*	此方法占内存 最好不用
+			!function(){
+				var sTop;
+				var nav=document.getElementById('right-nav'); 
+				setInterval(function(){
+				//获取滚动时 滚动条到页面的距离 
+					sTop=document.documentElement.scrollTop || document.body.scrollTop;  //兼容各浏览器
+						console.log(sTop);
+						if(sTop>580){
+							nav.style.transform='translatex(73px)';
+						}
+						else{
+							nav.style.transform='translatex(123px)';
+						}
+				},1)
+			}()
+			*/
+			(function(){
+				var nav=document.getElementById('right-nav');
+				//给窗口添加滚动事件 
+				window.onscroll = function(){
+				//获取滚动时 滚动条到页面的距离 
+				var sTop=document.documentElement.scrollTop || document.body.scrollTop;  //兼容各浏览器
+					if(sTop>400){
+						nav.style.transform='translatex(73px)';
+					}
+					else{
+						nav.style.transform='translatex(123px)';
+					}
+				}
+			})()
+
+		</script>
+	</body>
+</html>

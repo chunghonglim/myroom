@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+
+<head>
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <link rel="icon" href="{IMG_PATH}sfs/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="{IMG_PATH}sfs/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="http://sfs.scnu.edu.cn/" />
+    <meta name="generator" content="iwms网站管理系统" />
+    <link rel="stylesheet" href="{CSS_PATH}sfs/style.css" type="text/css" />
+    <link rel="stylesheet" href="{CSS_PATH}sfs/menu.css" type="text/css" />
+    <script type="text/javascript" src="{JS_PATH}sfs/jquery.js"></script>
+    <script type="text/javascript" src="{JS_PATH}sfs/iwms.js"></script>
+    <link rel="alternate" type="application/rss+xml" title="华南师范大学外国语言文化学院" />
+</head>
+
+<body>
+    <div class="twidth">
+
+        {template "content","header",$siteid}
+
+        <div id="navsub">
+            <div class="l"></div>
+            <div class="r"></div>
+            <div class="m">
+                <div style="float:left; width:400px; padding-left:5px; font-family:'微软雅黑';">
+                    <div class="sitenav"><a href="{siteurl($siteid)}/">{$SEO['site_title']}</a> » {catpos($catid)}</div>
+                </div>
+                <div style="float:right; width:400px;_padding-top:6px;font-family:'微软雅黑';">
+
+
+                </div>
+            </div>
+        </div>
+        <div id="middle">
+            <table width="100%" cellpadding="0" cellspacing="0">
+                <tr valign="top">
+                    <td>
+                        <table width="100%">
+                            <tr valign="top">
+                                <div style="float:left;" style="font-family:'微软雅黑';">
+									{pc:get sql="SELECT * FROM scnudb_cms_production_data.v9_news_sfs where status=99 AND thumb !='' ORDER BY inputtime DESC" num="4" return="data"}
+                                    <script type="text/javascript">
+                                    imgSlide.init(960, 250, [
+										{loop $data $v}
+                                        ["{$v['title']}", "{$v['url']}", "{$v['thumb']}"],
+										{/loop}
+                                    ], 70);
+                                    </script>
+									{/pc}
+                                </div>
+                            </tr>
+                        </table>
+                    </td>
+
+                </tr>
+            </table>
+            <table width="100%" cellpadding="0" cellspacing="0" style="font-family:'微软雅黑';">
+                <tr valign="top">
+                    <td>
+                        <table id="dlAll" cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;">
+
+<tr>
+<td>
+{php $j=1;}
+{pc:content action="category" catid="$catid" num="8" siteid="$siteid" order="inputtime DESC"} 
+{loop $data $r}
+{if $j%2==1}
+
+{/if}
+	<div class="alignTop" style="width:50%;float:left;">
+		<div class="box mR">
+		    <div class="tl"></div>
+		    <div class="tr"></div>
+		    <div class="tm">
+		        <div class="moreR">&nbsp;
+		            <a href="{$r[url]}"><img src="{IMG_PATH}sfs/b.gif" class="icoMore" alt="更多" /></a>
+		        </div>
+		        <span class="tt">{$r[catname]}</span>
+		    </div>
+		    <div class="wrapper">
+	            <div class="ml"></div>
+	            <div class="mr"></div>
+	            <div class="mm">
+	                <ul class="nl">
+	                    {pc:content action="lists" catid="$r[catid]" num="5" siteid="$siteid" order="inputtime DESC"} 
+						{loop $data $v}
+							<li><span class="gray dateR"><font class="time">{date('m-d', $v['inputtime'])}</font></span><a href="{$v[url]}" target="_blank">{str_cut($v[title],55,'')}</a></li>
+						{/loop}
+						{/pc}
+	                </ul>
+	            </div>
+        	</div>
+	        <div class="bl"></div>
+	        <div class="br"></div>
+	        <div class="bm"></div>
+	    </div>
+	</div>
+{if $j%2==1}
+
+{/if}
+{$j++}
+{/loop}
+{/pc}
+</td>
+</tr>
+                             
+                                
+                            
+                            
+                        </table>
+                    </td>
+                    <td width="250">
+                        <div class="lframe">
+                            <div class="tl"></div>
+                            <div class="tr"></div>
+                            <div class="tm" style="font-family:'微软雅黑';">
+                                <span class="tt">热门内容</span>
+                            </div>
+                            <div class="wrapper">
+                                <div class="ml"></div>
+                                <div class="mr"></div>
+                                <div class="mm" style="font-family:'微软雅黑';">
+                                    <ul class="nl">
+                        {pc:get sql="SELECT * FROM scnudb_cms_production_data.v9_news_sfs WHERE thumb LIKE '' ORDER BY inputtime DESC" thumb="0" num="5" start="1" return="data" moreinfo="1" cache="900"}
+							{loop $data $v}
+							<li><a href="{$v['url']}" target="_blank" title="{$v['title']}">{str_cut($v[title],52)}</a></li>
+							{/loop}
+						{/pc}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="bl"></div>
+                            <div class="br"></div>
+                            <div class="bm"></div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            {template "content","footer",$siteid}
+            
+        </div>
+        <script type="text/javascript">
+        linkSize();
+        StartRollV();
+        </script>
+</body>
+
+</html>

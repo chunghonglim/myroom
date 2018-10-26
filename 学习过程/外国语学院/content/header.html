@@ -1,0 +1,66 @@
+		<script src="{JS_PATH}scnu/jquery.superslide.js"></script>
+        <div id="sitehead">
+            <div class="l"></div>
+            <div class="r"></div>
+            <div class="m fl">
+				<div style="padding-top:10px;">
+					<img src="{IMG_PATH}sfs/logo.gif" alt="" width="500" height="70" border="0" />
+				</div>
+            </div>
+			<div class="hd_search fr">
+				{php $j=0}
+				{php $search_model = getcache('search_model_'.$siteid, 'search');}
+				{loop $search_model $k=>$v}
+				{php $j++;}
+				<a href="javascript:;" onclick="setmodel({$v['typeid']}, $(this));" style="display:none" hidefocus="true" {if $j==1 && $typeid=$v['typeid']} class="on" {/if}>{$v['name']}</a>{if $j != count($search_model)}{/if}
+				{/loop}
+				{php unset($j);}
+				<form action="{MODULE_PATH}index.php" method="get" target="_blank">
+					<input type="hidden" name="m" value="search" />
+					<input type="hidden" name="c" value="index" />
+					<input type="hidden" name="a" value="init" />
+					<input type="hidden" name="typeid" value="{$typeid}" id="typeid" />
+					<input type="hidden" name="siteid" value="{$siteid}" id="siteid" />
+					<div class="hd_search_text"><input type="text" name="q" value="" placeholder="" /></div>
+					<div class="hd_search_btn"><input type="submit" name="submit" value="" /></div>
+				</form>
+			</div>
+        </div>
+
+        <div id="navbar">
+            <div class="l"></div>
+            <div class="r"></div>
+            <div class="m">
+				<ul id="idmenu">
+					<li><a href="{siteurl($siteid)}/" class="first">网站首页</a></li>
+					{pc:content action="category" catid="0" num="10" siteid="$siteid" order="listorder ASC"}
+					{loop $data $k $v}
+					{php $num++}
+					<li class="navmenu">
+						<a href="{$v[url]}">{$v[catname]}</a>
+						{if $v[child]==1}
+						<ul class="sub">
+							{pc:content action="category" catid="$k" siteid="$siteid" order="listorder ASC"}
+							{loop $data $r}
+							<li><a href="{$r[url]}">{$r[catname]}</a></li>
+							{/loop}
+							{/pc}
+						</ul>
+						{/if}
+					</li>
+					{/loop}
+					{/pc}
+				</ul>
+            </div>
+        </div>
+		<script type="text/javascript">
+		$("#idmenu").slide({
+			type: "menu",
+			titCell: ".navmenu",
+			targetCell: ".sub",
+			effect: "slideDown",
+			delayTime: 300,
+			triggerTime: 0,
+			returnDefault: true
+		});
+		</script>

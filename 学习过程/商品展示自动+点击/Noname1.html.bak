@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+<style type="text/css">
+	*{margin:0;padding:0;}
+	body{background:rgb(244,244,244);}
+	#hotobject{
+		width:1240px;
+		height:423px;
+		overflow:hidden;
+	}	
+	#hotobject h2{
+		width:1240px;
+		height:45px;
+		line-height:45px;
+		margin:0 auto;
+	}
+	#hotobject h2 a{
+		display:inline-block;
+		width:23px;
+		height:23px;
+		border:1px solid black;
+		text-align:center;
+		line-height:23px;
+		float:right;
+		margin-left:5px;
+		cursor:pointer;
+		font-size:14px;
+		opacity:.2;
+	}
+	#hotobject .hot{
+		width:2480px;
+		height:340px;
+		margin:0 auto;
+		transition:1s;
+	}
+	#hotobject .hot .hotpicture{
+		width:240px;
+		height:340px;
+		float:left;
+		margin-right:10px;
+		background:rgb(255,255,255);
+	}
+	#hotobject .hot .hotpicture span{
+		display:block;
+		margin:10px auto;
+		width:100%;
+		text-align:center;
+		color:black;
+	}
+	#hotobject .hot .hotpicture img{
+		display:block;
+		margin:20px auto;
+	}
+	#hotobject .hot .hotpicture:hover{
+		box-shadow:4px 4px 12px rgba(234,234,234,0.5);
+		transform:translatey(-2px);
+	}
+</style>
+ <body>
+	<!--热销商品动态展示区-->
+	<div id='hotobject'>
+		<h2>热品推荐<a> > </a><a> < </a></h2>
+		<div class='hot'>
+			<a href='#'><div class='hotpicture'>
+				<img src='./img/1.png' alt='' width='200px' height='200px'>
+				<span>魅族 16th</span>
+				<span style='font-size:12px;color:red;border:1px solid red;width:27px;height:18px;line-height:18px;text-align:center'>新品</span>
+				<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>2698</span> 起</span>
+			</div></a>
+			<a href='#'><div class='hotpicture'>
+				<img src='./img/2.png' alt='' width='200px' height='200px'>
+				<span>魅族 16th Plus</span>
+				<span style='font-size:12px;color:red;border:1px solid red;width:27px;height:18px;line-height:18px;text-align:center'>新品</span>
+				<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>3198</span> 起</span>
+			</div></a>
+			<a href='#'><div class='hotpicture'>
+				<img src='./img/3.png' alt='' width='200px' height='200px'>
+				<span>魅族 15</span>
+				<span style='font-size:12px;color:red;border:1px solid red;width:54px;height:18px;line-height:18px;text-align:center'>热销机型</span>
+				<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>1998</span> 起</span>
+			</div></a>
+ 			<a href='#'><div class='hotpicture'>
+				<img src='./img/4.png' alt='' width='200px' height='200px'>
+				<span>魅蓝 E3</span>
+				<span style='font-size:12px;color:red;border:1px solid red;width:54px;height:18px;line-height:18px;text-align:center'>热销机型</span>
+				<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>1799</span></span>
+			</div></a>
+			<a href='#'><div class='hotpicture' style='margin-right:0px;'>
+				<img src='./img/5.png' alt='' width='200px' height='200px'>
+				<span>魅蓝 S6</span>
+				<span style='font-size:12px;color:red;border:1px solid red;width:54px;height:18px;line-height:18px;text-align:center'>热销机型</span>
+				<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>999</span> 起</span>
+			</div></a>
+			<a href='#'><div class='hotpicture'>
+				<img src='./img/6.png' alt='' width='200px' height='200px'>
+				<span>魅族手环</span>
+				<span style='font-size:12px;color:#cccccc;text-align:center'>腕间流动的心率专家</span>
+				<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>169</span></span>
+			</div></a>
+			<a href='#'><div class='hotpicture'>
+				<img src='./img/7.png' alt='' width='200px' height='200px'>
+				<span>魅族Gravity悬浮音响</span>
+				<span style='font-size:12px;color:#cccccc;text-align:center'>12期免息 日消费也就3.01</span>
+				<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>1099</span></span>
+			</div></a>
+			<a href='#'><div class='hotpicture'>
+				<img src='./img/8.png' alt='' width='200px' height='200px'>
+				<span>黑爵机械战狼键鼠两套装</span>
+				<span style='font-size:12px;color:#cccccc;text-align:center'>金属面板 机械手感 红驱动鼠标</span>
+				<span style='font-size:12px;color:red;'>￥ <span style='display:inline;font-size:20px;color:red;'>99</span></span>
+			</div></a>
+			<a href='#'><div class='hotpicture'>
+				<img src='./img/9.png' alt='' width='200px' height='200px'>
+				<span>乐心心率手环MAMBO2</span>
+				<span style='font-size:12px;color:#cccccc;text-align:center'>支持3期免息 24小时心率监测</span>
+				<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>109</span></span>
+			</div></a>
+			<a href='#'><div class='hotpicture' style='margin-right:0px;'>
+				<img src='./img/10.png' alt='' width='200px' height='200px'>
+				<span>魅族智能路由器</span>
+				<span style='font-size:12px;color:#cccccc;text-align:center'>简单便携 即插即用</span>
+				<span style='font-size:12px;color:red;'>限时特惠 ￥ <span style='display:inline;font-size:20px;color:red;'>49</span></span>
+			</div></a>
+		</div>
+	</div>
+	<!--热销商品动态展示区JS-->
+	<script type="text/javascript">
+		var hotobject=document.getElementById('hotobject');
+		var h2=hotobject.getElementsByTagName('h2')[0];
+		var change=h2.getElementsByTagName('a');	/*获取点击事件a元素*/
+		var hot=hotobject.getElementsByClassName('hot');
+			/*向右点击*/
+			change[0].onclick=function(){	
+				hot[0].style.transform='translatex(-1240px)';
+				change[1].style.opacity='0.5'
+				this.style.opacity='1';
+			}
+			/*向左点击*/
+			change[1].onclick=function(){	
+				hot[0].style.transform='translatex(0px)';
+				change[0].style.opacity='0.5'
+				this.style.opacity='1';
+			}
+	</script>
+ 
+ </body>
+</html>
