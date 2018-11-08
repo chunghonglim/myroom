@@ -149,7 +149,7 @@
                     <li v-for='(song,index) in originSongs'>
                       <span>{{ index+1 }}</span> <router-link tag='a' to='/'>{{ song.name }}</router-link>
                       <div class='oper'>
-                          <span class='fontfamily ljh-bofang' title="播放" @click='submitinfo(index,song),Bus'></span>
+                          <span class='fontfamily ljh-bofang' title="播放" @click='submitinfo(index,song)'></span>
                           <span class="lnr lnr-plus-circle" title="添加"></span>
                           <span class="lnr lnr-file-add" title="收藏"></span>
                       </div>

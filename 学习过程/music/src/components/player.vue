@@ -28,7 +28,7 @@
             </div>
             <div class='scroll-bar'>
               <div class='barbg'>
-                <div class='rdy' style='width: 0px'></div>
+                <div class='rdy' :style='{ width: this.$store.state.a.buffer +"%"}'></div>
                 <div class='cur' :style='{ width: this.$store.state.a.width +"%"}'>
                   <span>
                     <i></i>
@@ -108,18 +108,33 @@
         this.$store.commit('mode')
         this.mode = this.playtype[this.$store.state.a.mode].class
         this.modetitle = this.playtype[this.$store.state.a.mode].title
+        if(this.$store.state.a.mode == 1){
+          this.$refs.audios.loop = true
+        }
+        else{
+          this.$refs.audios.loop = false
+        }
       },
       voiceShow () {
         this.voiceshow = !this.voiceshow
       },
+      loading () {
+        setTimeout( () => {
+          if(!isNaN(this.$refs.audios.duration)){
+          this.$refs.audios.play()
+          this.$store.dispatch('currentime',this.$refs.audios)
+          this.$store.commit('totaltime',this.$refs.audios.duration)
+          }
+          else{
+            this.loading()
+          }
+        },500)
+      }
     },
     mounted () {
       bus.$on('playnow',() =>
-        {
-          setTimeout(() => {this.$refs.audios.play()
-          this.$store.commit('totaltime',this.$refs.audios.duration)
-          this.$store.dispatch('currentime',this.$refs.audios)
-          },150)
+        { 
+          this.loading()
         })
     },
     beforeDestroy () {
@@ -370,7 +385,7 @@
   .play-bar .innerbar .wrap .play .scroll-bar .time{
     position: absolute;
     top: -5px;
-    right: -84px;
+    right: -92px;
     color: #797979;
     text-shadow: 0 1px 0 #121212;
     font-size: 12px;

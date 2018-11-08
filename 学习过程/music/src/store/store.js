@@ -14,6 +14,7 @@ const play = {
       currentime: '00:00',
       end: false,
       width: 0,
+      buffer: 0,
      },
     mutations: { 
       playpause (state) {
@@ -51,15 +52,16 @@ const play = {
         let min = (m > 10)? m : '0' + m
         state.currentime = min + ':' + sec
         state.width = obj.currentTime/obj.duration * 100
+        state.buffer = obj.buffered.end(0)/obj.duration * 100
+        if(state.width == 100){
+          clearInterval(this.Timer)
+          state.pause = true
+        }
       }
     },
     actions: { 
       currentime (context,obj) {
-        console.log(obj)
-        if(obj.ended){
-            clearInterval(this.Timer)
-        }
-        else if(obj.paused){
+        if(obj.paused){
           clearInterval(this.Timer)
         }
         else{
