@@ -29,15 +29,15 @@
             <div class='scroll-bar'>
               <div class='barbg'>
                 <div class='rdy' style='width: 0px'></div>
-                <div class='cur' style='width: 0%'>
+                <div class='cur' :style='{ width: this.$store.state.a.width +"%"}'>
                   <span>
                     <i></i>
                   </span>
                 </div>
               </div>
               <span class='time'>
-                <a>03:05</a>
-                / 04:39
+                <a>{{ this.$store.state.a.currentime }}</a>
+                / {{ this.$store.state.a.totaltime }}
               </span>
             </div>
 
@@ -102,6 +102,7 @@
         else{
           this.$refs.audios.play()
         }
+        this.$store.dispatch('currentime',this.$refs.audios)
       },
       playType () {
         this.$store.commit('mode')
@@ -115,7 +116,10 @@
     mounted () {
       bus.$on('playnow',() =>
         {
-          setTimeout(() => this.$refs.audios.play(),150)
+          setTimeout(() => {this.$refs.audios.play()
+          this.$store.commit('totaltime',this.$refs.audios.duration)
+          this.$store.dispatch('currentime',this.$refs.audios)
+          },150)
         })
     },
     beforeDestroy () {
