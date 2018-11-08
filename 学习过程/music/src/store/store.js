@@ -48,8 +48,8 @@ const play = {
       currentime (state,obj) {
         let time = obj.currentTime
         let m = Math.round(time / 60) , s = Math.round(time % 60)
-        let sec = (s > 10)? s : '0' + s
-        let min = (m > 10)? m : '0' + m
+        let sec = (s > 9)? s : '0' + s
+        let min = (m > 9)? m : '0' + m
         state.currentime = min + ':' + sec
         state.width = obj.currentTime/obj.duration * 100
         state.buffer = obj.buffered.end(0)/obj.duration * 100
