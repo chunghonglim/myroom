@@ -20,18 +20,18 @@
             <img :src="this.$store.state.a.playdetail[2]" alt="">
             <router-link tag='a' to='/'></router-link>
           </div>
-          <div class='play'>
+          <div class='play' ref='culleft'>
             <div class='words'>
               <router-link tag='a' class='song' to='/'>{{ this.$store.state.a.playdetail[0] }}</router-link>
               <router-link tag='a' class='singer' to='/'>{{ this.$store.state.a.playdetail[1] }}</router-link>
               <router-link tag='a' class='fromto' to='/'></router-link>
             </div>
-            <div class='scroll-bar'>
-              <div class='barbg'>
+            <div class='scroll-bar' @dragover='dft'>
+              <div class='barbg' ref='barbg' @click='clickprogess'>
                 <div class='rdy' :style='{ width: this.$store.state.a.buffer +"%"}'></div>
                 <div class='cur' :style='{ width: this.$store.state.a.width +"%"}'>
-                  <span>
-                    <i></i>
+                  <span draggable="true" ref='move' @dragend='dragendprogess' @drag='dragprogress'>
+                    <i v-if='false'></i>
                   </span>
                 </div>
               </div>
@@ -40,18 +40,17 @@
                 / {{ this.$store.state.a.totaltime }}
               </span>
             </div>
-
           </div>
           <div class='oper'>
             <a href="javascript:;" class='like' title='收藏'></a>
             <a href="javascript:;" class='share' title='分享'></a>
           </div>
-          <div class='ctrl'>
-            <div class='vctr' v-if='voiceshow'>
+          <div class='ctrl' @dragover='dft'>
+            <div class='vctr' v-show='voiceshow'>
               <div class='vbarbg'></div>
-              <div class='vbg'>
-                <div class='curr' style='height: 70px'></div>
-                <span class='vbtn' style='top: 16.2px'></span>
+              <div class='vbg' @dragover='dft' @click='clickvoice'>
+                <div class='curr' :style='{ height: this.$store.state.a.voiceheight + "px" }' ref='voice'></div>
+                <span class='vbtn' :style='{ top: 87 - this.$store.state.a.voiceheight + "px" }' draggable="true" @drag='dragvoice'></span>
               </div>
             </div>
             <a class='icon-voice' title='音量' @click='voiceShow'></a>
@@ -69,7 +68,6 @@
   
   <script>
   import bus from './bus.js'
-  
   export default {
     data () {
       return {
@@ -104,6 +102,7 @@
         }
         this.$store.dispatch('currentime',this.$refs.audios)
       },
+      /*播放模式*/
       playType () {
         this.$store.commit('mode')
         this.mode = this.playtype[this.$store.state.a.mode].class
@@ -118,8 +117,9 @@
       voiceShow () {
         this.voiceshow = !this.voiceshow
       },
+      /*判断是否可以进行播放 给它一个定时器是为了用箭头函数让this指向这个vue实例*/
       loading () {
-        setTimeout( () => {
+       setTimeout( () => {
           if(!isNaN(this.$refs.audios.duration)){
           this.$refs.audios.play()
           this.$store.dispatch('currentime',this.$refs.audios)
@@ -128,17 +128,68 @@
           else{
             this.loading()
           }
-        },500)
-      }
+        },0)
+      },
+      /*设置拖拽放置*/
+      dft () {
+        event.preventDefault()
+      },
+      /*计算球到进度条左侧距离*/
+      offsetleft () {
+        let left = this.$refs.culleft.offsetLeft
+        let parent = this.$refs.culleft.offsetParent
+        while(parent != null){
+          left += parent.offsetLeft 
+          parent = parent.offsetParent
+        }
+        return left
+      },
+      /*计算音量高度 球至顶部高度*/
+      offsetheight () {
+        let top = this.$refs.voice.offsetTop
+        let parent = this.$refs.voice.offsetParent
+        while(parent != null){
+          top += parent.offsetTop
+          parent = parent.offsetParent
+        }
+        return top
+      },
+      /*进度拖动过程的函数*/
+      dragprogress () {
+        this.$store.commit('move',event.clientX - this.offsetleft())
+      },
+      /*进度拖动结束时的函数，将时间传入开始播放*/
+      dragendprogess () {
+        this.$refs.audios.currentTime = (this.$store.state.a.width / 100) * this.$refs.audios.duration
+        this.$store.dispatch('currentime',this.$refs.audios)
+      },
+      /*点击调节进度*/
+      clickprogess () {
+        this.$store.commit('move',event.clientX - this.offsetleft()) /*获得进度条位置 计算width*/
+        this.$refs.audios.currentTime = (this.$store.state.a.width / 100) * this.$refs.audios.duration
+        this.$store.dispatch('currentime',this.$refs.audios)
+      },
+      /*音量拖动调节函数*/
+      dragvoice () {
+        this.$store.commit('voice',event.clientY - this.offsetheight())
+        this.$refs.audios.volume = this.$store.state.a.voiceheight / 93
+      },
+      /*音量点击调节函数*/
+      clickvoice () {
+        this.$store.commit('voice',event.clientY - this.offsetheight()) 
+        this.$refs.audios.volume = this.$store.state.a.voiceheight / 93
+      },
     },
     mounted () {
+      /*监听来自其他组件的播放时间*/
       bus.$on('playnow',() =>
         { 
           this.loading()
         })
-    },
-    beforeDestroy () {
-      bus.$off('playnow')
+/*       window.onscroll = function() {
+        this.scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+        console.log(this.scrollTop)
+      } */
     },
   }
   </script>
@@ -348,6 +399,7 @@
     height: 9px;
     background: url(https://s2.music.126.net/style/web2/img/frame/statbar.png?721b4e327e245d590be16a8a2bea3fdd)no-repeat 0 9999px;
     background-position: right 0;
+    cursor: pointer;
   }
   .play-bar .innerbar .wrap .play .scroll-bar .barbg .rdy{
     height: 9px;
@@ -372,9 +424,12 @@
     margin-left: -11px;
     background: url(https://s2.music.126.net/style/web2/img/iconall.png?8e98e744a053cdbfe916249540e06392) no-repeat;
     background-position: 0 -250px;
+    cursor: pointer;
+  }
+  .play-bar .innerbar .wrap .play .scroll-bar .barbg .cur span:hover{
+    background-position: 0 -280px;
   }
   .play-bar .innerbar .wrap .play .scroll-bar .barbg .cur span i{
-    visibility: hidden;
     position: absolute;
     left: 5px;
     top: 5px;

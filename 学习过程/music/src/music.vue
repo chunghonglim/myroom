@@ -1,7 +1,9 @@
 <template>
   <div>
     <top></top>
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
     <bottom></bottom>
     <player></player>
   </div>

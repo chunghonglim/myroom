@@ -18,7 +18,7 @@
             <div class='search-list' v-show='showSearch'>
               <router-link tag='p' to='/' class='note'>搜"{{ searchMsg }}"相关用户 &gt; </router-link>
               <div class='rap'>
-                <div class='list' v-if='singers.length!=0'>
+                <div class='list' v-show='singers.length!=0'>
                   <div class='title'>
                     <h3><span class="lnr lnr-user"></span>歌手</h3>
                   </div>
@@ -26,15 +26,16 @@
                     <router-link tag='a' to='/' class='item' v-for='singer in singers'>{{ singer }}</router-link>
                   </div>
                 </div>
-                <div class='list' v-if='songs.length!=0'>
+                <div class='list' v-show='songs.length!=0'>
                   <div class='title'>
                     <h3><span class="lnr lnr-music-note"></span>单曲</h3>
                   </div>
                   <div class='detail'>
-                    <router-link tag='a' to='/' class='item' v-for='song in songs'>{{ song }}</router-link>
+                    <router-link tag='a' :to=" '/song/id=' + song.id " class='item' v-for='song in songs'
+                    @click.native='clearmsg'>{{ song.name }} - {{ song.artists[0].name }}</router-link>
                   </div>
                 </div>
-                <div class='list' v-if='cds.length!=0'>
+                <div class='list' v-show='cds.length!=0'>
                   <div class='title'>
                     <h3><span class="lnr lnr-film-play"></span>专辑</h3>
                   </div>
@@ -42,7 +43,7 @@
                     <router-link tag='a' to='/' class='item' v-for='cd in cds'>{{ cd }}</router-link>
                   </div>
                 </div>
-                <div class='list' v-if='vedios.length!=0'>
+                <div class='list' v-show='vedios.length!=0'>
                   <div class='title'>
                     <h3><span class="lnr lnr-camera-video"></span>视频</h3>
                   </div>
@@ -50,7 +51,7 @@
                     <router-link tag='a' to='/' class='item' v-for='vedio in vedios'>MV: {{ vedio }}</router-link>
                   </div>
                 </div>
-                <div class='list' v-if='songlists.length!=0'>
+                <div class='list' v-show='songlists.length!=0'>
                   <div class='title'>
                     <h3><span class="lnr lnr-text-align-justify"></span>歌单</h3>
                   </div>
@@ -68,7 +69,7 @@
           <div class='login' @mouseenter='showLoginType' @mouseleave='hideLoginType'>
             <span class='login-show'>登陆</span><span class='triangleb'></span>
           </div> 
-          <div class='login-type' v-if='showLogin' @mouseenter='showLoginType' @mouseleave='hideLoginType'>
+          <div class='login-type' v-show='showLogin' @mouseenter='showLoginType' @mouseleave='hideLoginType'>
             <span class='trianglet'></span>
             <ul>
               <li><span class="lnr lnr-smartphone"></span>手机登陆</li>
@@ -76,7 +77,7 @@
             </ul>
           </div>
       </div>
-      <div class='nav-child'>
+      <div class='nav-child' v-show='this.$store.state.b.navhide'>
         <div class='wrap'>
           <ul>
             <router-link to='/' tag='li' v-for='(nav,index) in navchild' 
@@ -119,7 +120,7 @@
         ]
       }
     },
-    methods: {
+  methods: {
       triangleTip (index) {
         this.navindex = index
       },
@@ -158,9 +159,9 @@
           //获取单曲最多4个
           this.$axios.get('/search?keywords=' + this.searchMsg +'&limit=4')
           .then(res => {
-            this.songs = []  
+            this.songs = []
             for(let i=0; i < res.data.result.songs.length; i++){
-              this.songs.push(res.data.result.songs[i].name + '-' + res.data.result.songs[i].artists[0].name)
+              this.songs.push(res.data.result.songs[i])
             }
           })
           .catch(error => {
@@ -208,9 +209,13 @@
         else{
           this.showSearch = false
         }
+      },
+      clearmsg () {
+        this.searchMsg = ''
+        this.showSearch = false
       }
-    }
-  }
+  },
+}
   </script>
   
   <style scoped>
@@ -222,7 +227,7 @@
     width: 1200px;
     height: 70px;
     margin: 0 auto;
-    zoom:1;/*为了兼容IE*/
+    zoom:1;
   }
   .top-wrap .header:after{
     content: "";

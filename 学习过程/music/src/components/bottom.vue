@@ -26,7 +26,6 @@ export default {
 .bottom-wrap .footer{
     width: 980px;
     margin: 0 auto;
-    
 }
 .bottom-wrap .footer .info{
     margin-top: 50px;
