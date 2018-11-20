@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>欢迎来到聊天室</p>
+    <input type="text" name="" id="text">
+    <button id='btn'>send</button>
+</body>
+    <script src='http://www.wulv5.com/js/socket.io.min.js'></script>
+    <script>
+        var socket = io.connect('/');
+        var oText = document.getElementById('text'),
+            oBtn = document.getElementById('btn')
+        oBtn.onclick = function(){
+            var val = oText.value;
+            if(!val) return
+            socket.send(val);
+            oText.value = ''
+        }   
+        socket.on('message',function(mes){
+            console.log(mes);
+            var div = document.createElement('div');
+            div.innerHTML = mes;
+            document.body.appendChild(div)
+        })
+    </script>
+
+</html>
