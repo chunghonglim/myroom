@@ -12,7 +12,7 @@ Vue.prototype.$axios = Axios;
 Vue.config.productionTip = false
 
 
-Axios.defaults.baseURL = 'http://localhost:3000'
+Axios.defaults.baseURL = 'http://47.107.244.110:3000/'
 
 /* eslint-disable no-new */
 new Vue({
