@@ -68,14 +68,14 @@
           </div>
           <div class='login' @mouseenter='showLoginType' @mouseleave='hideLoginType'>
             <span class='login-show'>登陆</span><span class='triangleb'></span>
+            <div class='login-type' v-show='showLogin'>
+              <span class='trianglet'></span>
+              <ul>
+                <li><span class="lnr lnr-smartphone"></span>手机登陆</li>
+                <li><span class="lnr lnr-envelope"></span>邮箱登录</li>
+              </ul>
+            </div>
           </div> 
-          <div class='login-type' v-show='showLogin' @mouseenter='showLoginType' @mouseleave='hideLoginType'>
-            <span class='trianglet'></span>
-            <ul>
-              <li><span class="lnr lnr-smartphone"></span>手机登陆</li>
-              <li><span class="lnr lnr-envelope"></span>邮箱登录</li>
-            </ul>
-          </div>
       </div>
       <div class='nav-child' v-show='this.$store.state.b.navhide'>
         <div class='wrap'>
@@ -409,8 +409,8 @@
   }
   .top-wrap .header .login-type{
     position: absolute;
-    top: 58px;
-    right: 150px;
+    top: 38px;
+    left: -58px;
     background: #2b2b2b;
     width: 158px;
     border: 1px solid #202020;
