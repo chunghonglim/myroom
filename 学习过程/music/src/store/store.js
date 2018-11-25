@@ -70,6 +70,7 @@ const play = {
           state.buffer = obj.buffered.end(0)/obj.duration * 100
         }
         if(state.width == 100){
+          state.pause = true
           clearInterval(this.Timer)
         }
       },
